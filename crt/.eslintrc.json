@@ -1,3 +1,10 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "compilerOptions": {
+      "baseUrl": "./",
+      "paths": {
+        "@components/*": ["components/*"],
+        "@utils/*": ["utils/*"]
+      }
+    }
 }
