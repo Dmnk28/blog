@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import BlogIndex from './blog';
 
 // import marked from 'marked';
 // import DOMPurify from 'dompurify';
@@ -32,7 +33,7 @@ import styles from '../styles/Home.module.css'
 
 
 export default function Home() {
-  const [page, setPage] = useState(null);
+  // const [page, setPage] = useState(null);
 // 
   // useEffect(() => {
     // window.fetch(`https://graphql.contentful.com/content/v1/spaces/${process.env.REACT_APP_CONTENTFUL_SPACEID}/`, {
@@ -79,6 +80,7 @@ export default function Home() {
           <code className={styles.code}>pages/index.js</code>
         </p>
 
+        <BlogIndex />
 {/* 
         <h1>{page.title}</h1>
         

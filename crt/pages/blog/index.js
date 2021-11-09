@@ -1,11 +1,15 @@
 import ContentfulApi from "@utils/ContentfulApi";
 import { Config } from "@utils/Config";
+import PostList from "@components/PostList";
 
 export default function BlogIndex(props) {
     const { postSummaries, currentPage, totalPages } = props;
 
     return (
-        <div></div>
+        <PostList   posts={postSummaries}
+                    totalPages={totalPages}
+                    currentPage={currentPage}
+        />
     );
 }
 

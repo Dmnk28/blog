@@ -30,9 +30,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const postSummaries = await ContentfulApi.getPaginatedPostSummaries(
-    params.page,
-  );
+  const postSummaries = await ContentfulApi.getPaginatedPostSummaries(params.page,);
   const totalPages = Math.ceil(postSummaries.total / Config.pagination.pageSize);
 
   return {
