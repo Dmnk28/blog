@@ -1,11 +1,16 @@
 import ContentfulApi from "@utils/ContentfulApi";
 import { Config } from "@utils/Config";
+import PostList from "@components/PostList";
 
 export default function BlogIndexPage(props) {
   const { postSummaries, totalPages, currentPage } = props;
 
   return (
-    <div></div>// We’ll build the post list component later
+    <PostList 
+      posts={postSummaries} 
+      totalPages={totalPages}
+      currentPage={currentPage}
+    />
   );
 }
 

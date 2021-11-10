@@ -1,3 +1,4 @@
+import { Config } from "@utils/Config";
 
 export default class ContentfulApi {
     
@@ -48,7 +49,7 @@ export default class ContentfulApi {
 
     // Get all blogPost Data
     const query = `{
-        blogPostCollection(limit: ${Config.pagination.pageSize}, skip: ${skip}, order: date_DESC) {
+        blogPostCollection(limit: ${Config.pagination.pageSize}, skip: ${skip}, order: publicationDate_DESC) {
           total
           items {
             sys {
@@ -77,9 +78,7 @@ export default class ContentfulApi {
     // Call out to the API
     const response = await this.callContentful(query);
 
-    const paginatedPostSummaries = response.data.blogPostCollection
-      ? response.data.blogPostCollection
-      : { total: 0, items: [] };
+    const paginatedPostSummaries = response.data.blogPostCollection ? response.data.blogPostCollection : { total: 0, items: [] };
 
     return paginatedPostSummaries;
   }  

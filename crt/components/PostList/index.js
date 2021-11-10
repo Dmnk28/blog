@@ -1,41 +1,53 @@
-// import Link from 'next/link';
+import Link from 'next/link';
+import Pagination from './Pagination';
 // import marked from 'marked';
 import ReactMarkdown from 'react-markdown';
-// import ReactMarkdownRenderers from '../../utils/ReactMarkdownRenderers'
+import ReactMarkdownRenderers from '@utils/ReactMarkdownRenderers'
 import {    formatPublishedDateForDateTime,
-            formatPublishedDateForDisplay, } from '../../utils/Date';
+            formatPublishedDateForDisplay, } from '@utils/Date';
 
 export default function PostList(props) {
-    const { posts } = props;
-    
-    return (
-        <ol>
-            {posts.map((post) => (
-                <li key={post.sys.id}>
-                    <article>
-                        <time dateTime={formatPublishedDateForDateTime(publicationDate)}>
-                            {formatPublishedDateForDisplay(publicationDate)}
-                        </time>
-                        <link href={`blog/${post.slug}`}>
-                            <a>
-                                <h2>{post.title}</h2>
-                            </a>
-                        </link>
+  const { posts, currentPage, totalPages } = props;
 
-                        <ul>
-                            {tags.map((tag) => (
-                                <li key={tag}>{tag}</li>
-                            ))}
-                        </ul>
+  const nextDisabled = parseInt(currentPage, 10) === parseInt(totalPages, 10);
+  const prevDisabled = parseInt(currentPage, 10) === 1;
 
-                        <ReactMarkdown 
-                            children={post.excerpt}
-                            // renderers={ReactMarkdownRenderers(post.excerpt)}
-                        />
+  return (
+    <div>
+      <ol>
+        {posts.map((post) => (
+          <li key={post.sys.id}>
+            <article>
+              <time dateTime={formatPublishedDateForDateTime(post.publicationDate)}>
+                {formatPublishedDateForDisplay(post.publicationDate)}
+              </time>
 
-                    </article>
-                </li>
-            ))}
-        </ol>
-    );
+              <Link href={post.slug}>
+                <a>
+                  <h2>{post.title}</h2>
+                </a>
+              </Link>
+
+              <h6>Tags</h6>
+              <ul>
+                {post.tags.map((tag) => (
+                  <li key={tag}>{tag}</li>
+                ))}
+              </ul>
+
+              <ReactMarkdown
+                renderers={ReactMarkdownRenderers(post.excerpt)}
+              >{post.excerpt}</ReactMarkdown>
+            </article>
+          </li>
+        ))}
+      </ol>
+      <Pagination 
+        totalPages={totalPages}
+        currentPage={currentPage}
+        nextDisabled={nextDisabled}
+        prevDisabled={prevDisabled}
+      />
+    </div>
+  );
 }
