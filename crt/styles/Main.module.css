@@ -1,1 +1,9 @@
-/* No CSS *//*# sourceMappingURL=Main.module.css.map */
+#pagination-ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+/*# sourceMappingURL=Main.module.css.map */

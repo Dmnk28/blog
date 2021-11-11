@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import Link from "next/link";
 
 export default function Pagination(props) {
@@ -8,24 +9,30 @@ export default function Pagination(props) {
     const nextPageUrl = `/blog/page/${parseInt(currentPage, 10) + 1}`
 
     return (
-        <ul>
+        <ul id="pagination-ul">
             <li>
                 {/* {prevDisabled && <span>Previous page</span>} */}
                 {!prevDisabled && (
-                    <Link href={prevPageUrl}>
-                        <a>Previous Page</a>
-                    </Link>
+                    <Button variant="contained">
+                        <Link href={prevPageUrl}>
+                            <a>Previous Page</a>
+                        </Link>
+                    </Button>
                 )}
             </li>
             <li>
-                Page {currentPage} of {totalPages}
+                <Button variant="contained" disabled>
+                    Page {currentPage} of {totalPages}
+                </Button>
             </li>
             <li>
                 {/* {nextDisabled && <span>Next page</span>} */}
                 {!nextDisabled && (
-                    <Link href={nextPageUrl}>
-                        <a>Next page</a>
-                    </Link>
+                    <Button variant="contained">
+                        <Link href={nextPageUrl}>
+                            <a>Next page</a>
+                        </Link>
+                    </Button>
                 )}
             </li>
         </ul>

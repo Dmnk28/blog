@@ -4,8 +4,6 @@ import PostList from "@components/PostList";
 
 export default function BlogIndex(props) {
   const { postSummaries, currentPage, totalPages } = props;
-  console.log(postSummaries, currentPage, totalPages);
-  console.log('ooepeo');
   return (
         <PostList 
             posts={postSummaries} 
@@ -21,9 +19,7 @@ BlogIndex.defaultProps = {
   currentPage: 1,
 }
 
-export async function getServerSideProps() {
-  console.log('ooepeo');
-  
+export async function getServerSideProps() {  
   const postSummaries = await ContentfulApi.getPaginatedPostSummaries(1);
   const totalPages = Math.ceil(postSummaries.total / Config.pagination.pageSize);
 
