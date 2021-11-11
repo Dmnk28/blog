@@ -16,7 +16,7 @@ export default function Home() {
         <meta name="author" content="Dominik Oesterle"/>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      
       <main className="main">
         <h1 className="title">
           Welcome to CRT

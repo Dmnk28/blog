@@ -6,6 +6,12 @@ import ReactMarkdownRenderers from '@utils/ReactMarkdownRenderers'
 import {    formatPublishedDateForDateTime,
             formatPublishedDateForDisplay, } from '@utils/Date';
 
+import { Button } from "@mui/material";
+
+import NextLink from 'next/link'
+import { Link as MUILink } from '@mui/material';
+            
+
 export default function PostList(props) {
   const { posts, currentPage, totalPages } = props;
 
@@ -14,6 +20,11 @@ export default function PostList(props) {
 
   return (
     <div>
+      <Button id="prevBtn" variant="contained">
+        <NextLink href="./" passHref>
+          <MUILink variant="body" color="secondary">Home</MUILink>
+        </NextLink>
+      </Button> 
       <ol>
         {posts.map((post) => (
           <li key={post.sys.id}>
