@@ -22,7 +22,10 @@ function MyApp({ Component, pageProps }) {
       
       <MenuBar mode={mode} setMode={setMode}/>
 
+      
       <Component {...pageProps} />
+
+
     </ThemeProvider>
   )
 
