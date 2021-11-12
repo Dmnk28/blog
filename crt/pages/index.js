@@ -1,32 +1,28 @@
+import React from 'react';
+import { useState } from 'react';
+
 import Head from 'next/head';
 // import Image from 'next/image';
 import NextLink from 'next/link'
-import { AppBar, IconButton, Link as MUILink, Toolbar, Typography } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu'
+import { Button, createTheme, IconButton, Link as MUILink, ThemeProvider } from '@mui/material';
+import { CssBaseline } from '@mui/material';
 
-import { Button } from '@mui/material';
 import MenuBar from '@components/MenuBar';
 
-export default function Home() {
-  return (
-    <div className="container">
-      <Head>
-        <title>Code Ride Translate</title>
-        <meta name="description" content="A Blog tributed to coding, cycling and languages" />
-        <meta name="author" content="Dominik Oesterle"/>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      
-      <MenuBar />
-      
+// const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
+export default function Home() {
+  
+  return (
+    <div>
+      
       <main className="main">
         <h1 className="title">
           Welcome to CRT
         </h1>
 
-        <Button variant="contained">
-          <NextLink href="/blog"> View all Posts</NextLink>
+        <Button variant="contained" href="/blog">
+          View all Posts
         </Button>
       </main>
 

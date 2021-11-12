@@ -21,8 +21,6 @@ export default function PostList(props) {
 
   return (
     <div className="container">
-      <MenuBar />
-       
       <ol>
         {posts.map((post) => (
           <li key={post.sys.id}>
