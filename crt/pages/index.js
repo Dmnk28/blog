@@ -1,11 +1,11 @@
 import Head from 'next/head';
 // import Image from 'next/image';
 import NextLink from 'next/link'
-import { Link as MUILink } from '@mui/material';
-
-// import styles from '../styles/Home.module.css'
+import { AppBar, IconButton, Link as MUILink, Toolbar, Typography } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu'
 
 import { Button } from '@mui/material';
+import MenuBar from '@components/MenuBar';
 
 export default function Home() {
   return (
@@ -17,6 +17,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
+      <MenuBar />
+      
+
       <main className="main">
         <h1 className="title">
           Welcome to CRT

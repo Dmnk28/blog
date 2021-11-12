@@ -10,6 +10,7 @@ import { Button } from "@mui/material";
 
 import NextLink from 'next/link'
 import { Link as MUILink } from '@mui/material';
+import MenuBar from '@components/MenuBar';
             
 
 export default function PostList(props) {
@@ -19,12 +20,9 @@ export default function PostList(props) {
   const prevDisabled = parseInt(currentPage, 10) === 1;
 
   return (
-    <div>
-      <Button id="prevBtn" variant="contained">
-        <NextLink href="./" passHref>
-          <MUILink variant="body" color="secondary">Home</MUILink>
-        </NextLink>
-      </Button> 
+    <div className="container">
+      <MenuBar />
+       
       <ol>
         {posts.map((post) => (
           <li key={post.sys.id}>
