@@ -10,7 +10,7 @@ export default function MenuBar() {
         <AppBar position="static">
             <Toolbar>
                 <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
-                    <NextLink href="./">Code Ride Translate</NextLink>
+                    <NextLink href="/">Code Ride Translate</NextLink>
                 </Typography>
                 <Button color="inherit">Code</Button>
                 <Button color="inherit">Ride</Button>
