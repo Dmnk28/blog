@@ -4,11 +4,11 @@ const getLightVsDark = (mode) => (mode === 'light') ? {
     /* Light Side */
     palette: {
         primary: {
-            main: '#D97904',
+            main: '#F2C12E',
         },
         divider: '#D97904'[200],
         secondary: {
-            main: '#203644',
+            main: '#023E73',
         },
         text: {
             primary: grey[900],
