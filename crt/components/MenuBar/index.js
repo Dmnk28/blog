@@ -26,7 +26,9 @@ export default function MenuBar({mode, setMode}) {
                     </NextLink>
                 </Typography>
                 
-                <Button color="inherit">Code</Button>
+                <NextLink href="/code" passHref>
+                    <Button color="inherit">Code</Button>
+                </NextLink>
                 <Button color="inherit">Ride</Button>
                 <Button color="inherit">Translate</Button>
                 <NextLink href="/blog" passHref>

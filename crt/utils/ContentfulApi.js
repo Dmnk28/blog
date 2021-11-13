@@ -81,6 +81,41 @@ export default class ContentfulApi {
     const paginatedPostSummaries = response.data.blogPostCollection ? response.data.blogPostCollection : { total: 0, items: [] };
 
     return paginatedPostSummaries;
-  }  
+  }
+  
+  static async getLatestPosts(tag) {
+    const tagToFind = tag;
+    const query = `{
+      blogPostCollection(where: {tags_contains_some: "Code"}, limit: 12, order: publicationDate_DESC) {
+        total
+        items {
+          sys {
+            id
+          }
+          title
+          subtitle
+          slug
+          excerpt
+          tags
+          publicationDate
+          titleImage {
+            title
+            description
+            contentType
+            fileName
+            size
+            url
+            width
+            height
+          }
+        }
+      }
+    }`;
+
+    const response    = await this.callContentful(query);
+    const latestPosts = response.data.blogPostCollection ? response.data.blogPostCollection : { total: 0, items: [] };
+    
+    return latestPosts;
+  }
 
 }
