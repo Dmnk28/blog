@@ -22,13 +22,9 @@ export default function MenuBar({mode, setMode}) {
             <Toolbar>
                 <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
                     <NextLink href="/" passHref>
-                        <MUILink color="secondary">Code Ride Translate</MUILink>
+                        <MUILink color="secondary" underline="hover">Code Ride Translate</MUILink>
                     </NextLink>
                 </Typography>
-                
-                <IconButton onClick={handleModeBtn} color="inherit">
-                    {mode === 'light' ? <Brightness2 /> : <Brightness7 />}
-                </IconButton>
                 
                 <Button color="inherit">Code</Button>
                 <Button color="inherit">Ride</Button>
@@ -37,7 +33,11 @@ export default function MenuBar({mode, setMode}) {
                     <Button color="inherit">All Blogposts</Button>
                 </NextLink>
                 
-                <Button
+                <IconButton onClick={handleModeBtn} color="inherit">
+                    {mode === 'light' ? <Brightness2 /> : <Brightness7 />}
+                </IconButton>
+                
+                <IconButton
                     size="large"
                     edge="start"
                     color="inherit"
@@ -45,7 +45,7 @@ export default function MenuBar({mode, setMode}) {
                     sx={{ mr: 2}}
                 >
                     <MenuIcon />
-                </Button>
+                </IconButton>
             </Toolbar>
         </AppBar>
     );
