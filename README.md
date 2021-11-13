@@ -18,7 +18,7 @@ From there on it's my own design, thinking and style of implementation.
 - Some Kind of Carrousel/Slider for recent Blogposts
 - Images
 - Responsive Menu
-- Theme and Palette! 
+- Better coloring in Theme and Palette! 
 
 ## What I learned
 - Using an (Contentful) API.
@@ -27,9 +27,11 @@ From there on it's my own design, thinking and style of implementation.
     - idealy pas the API-Requests with personal Keys to a backendapp and run them on the server
 - that ServerSideRendering is a cool thing to do, especially for pushing SEO and Performance.
 - how the built in next-routing works.
-- to host a Next-App on vercel.com
-- Comining MUI with Next (Problems with Link-Modules avoided)
-- Launching an Next.js-App with [vercel](https://vercel.com) is my option (because I dont't have any server, only a hosting package and a bunch of domains)
+- combining MUI with Next (Problems with Link-Modules avoided).
+    - utilize dark mode/light mode toggle in MUI
+    - more theme-configuration in MUI (Background with CssBaseline, ...) 
+    - if dark mode changes coloured component backgrounds to standard paper background, this can be overriden in the theme-creation
+- launching an Next.js-App with [vercel](https://vercel.com) is my option (because I dont't have any server, only a hosting package and a bunch of domains)
 
 ### What works but I didn't figure out why
 - In the blog/index.js file the getStaticProps function wasn't called. So I found an stackoverflow-entry suggesting to use .defaultProps for defining (any) prop first. I tryed that, after spending an hour declaring "that can't be the solution". Then the getStaticProps was executed. I need to know what the problem was and other whether solutions exist.
