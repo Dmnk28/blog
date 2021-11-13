@@ -26,11 +26,6 @@ export default function Home() {
         </Button>
       </main>
 
-      <footer id="footer">
-        <NextLink href="https://do-webdev.de/projects/timer" passHref>
-          <MUILink variant="body2">&copy; 2021 Dominik Oesterle</MUILink>
-        </NextLink>
-      </footer>
     </div>
   )
 }

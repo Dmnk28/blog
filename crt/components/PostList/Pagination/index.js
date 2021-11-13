@@ -15,7 +15,7 @@ export default function Pagination(props) {
             <li>
                 { prevDisabled && <Button id="prevBtn" variant="contained" disabled>
                     <NextLink href={prevPageUrl} passHref>
-                        <MUILink variant="body">Previous Page</MUILink>
+                        <MUILink variant="body" color="secondary">Previous Page</MUILink>
                     </NextLink>
                 </Button> }
 
@@ -33,7 +33,7 @@ export default function Pagination(props) {
             <li>
                 { nextDisabled && <Button id="prevBtn" variant="contained" disabled>
                     <NextLink href={nextPageUrl} passHref>
-                        <MUILink variant="body">Next Page</MUILink>
+                        <MUILink variant="body" color="secondary">Next Page</MUILink>
                     </NextLink>
                 </Button> }
 
