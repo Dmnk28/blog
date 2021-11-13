@@ -16,7 +16,7 @@ body {
 }
 
 .main {
-  min-height: 90vh;
+  min-height: 80vh;
   padding: 2rem 0;
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -51,13 +51,13 @@ body {
 }
 
 #footer {
-  padding: 0 2rem;
+  padding: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   text-align: center;
 }
 /*# sourceMappingURL=main.css.map */

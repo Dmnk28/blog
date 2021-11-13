@@ -5,7 +5,7 @@ export default function Footer () {
     return (
         <footer id="footer">
             <NextLink href="https://do-webdev.de/projects/timer" passHref>
-                <MUILink variant="body2">&copy; 2021 Dominik Oesterle</MUILink>
+                <MUILink variant="body" color="secondary">&copy; 2021 Dominik Oesterle</MUILink>
             </NextLink>
         </footer>
     );
