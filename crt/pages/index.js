@@ -4,12 +4,7 @@ import { useState } from 'react';
 import Head from 'next/head';
 // import Image from 'next/image';
 import NextLink from 'next/link'
-import { Button, createTheme, IconButton, Link as MUILink, ThemeProvider } from '@mui/material';
-import { CssBaseline } from '@mui/material';
-
-import MenuBar from '@components/MenuBar';
-
-// const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
+import { Button, Link as MUILink } from '@mui/material';
 
 export default function Home() {
   
@@ -20,10 +15,11 @@ export default function Home() {
         <h1 className="title">
           Welcome to CRT
         </h1>
-
-        <Button variant="contained" href="/blog">
-          View all Posts
-        </Button>
+        <NextLink href="/blog" passHref>
+          <Button variant="contained">
+            View all Posts
+          </Button>
+        </NextLink>
       </main>
 
     </div>
