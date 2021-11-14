@@ -83,10 +83,10 @@ export default class ContentfulApi {
     return paginatedPostSummaries;
   }
   
-  static async getLatestPosts(tag) {
-    const tagToFind = tag;
+  static async getLatestPosts(tagToFetch) {
+    
     const query = `{
-      blogPostCollection(where: {tags_contains_some: "Code"}, limit: 12, order: publicationDate_DESC) {
+      blogPostCollection(where: {tags_contains_some: "${tagToFetch}"}, limit: 12, order: publicationDate_DESC) {
         total
         items {
           sys {

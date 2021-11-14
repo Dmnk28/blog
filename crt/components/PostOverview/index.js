@@ -1,50 +1,33 @@
-import { Label } from '@mui/icons-material';
-import Masonry, { Grid, Paper, Stack } from '@mui/material';
-import Item from '@mui/material'
-import { useState } from 'react';
+import { Card, CardActionArea, CardContent, CardMedia, Grid, Typography } from '@mui/material';
+import Image from 'next/image';
 
 export default function PostOverview ({posts}) {
-    const [lastSize, setLastSize]           = useState(0);
-    const [oneColumnLeft, setOneColumnLeft] = useState(false);
     
-    const randomSize = () => {
-        const possibleSizes = [8, 4, 6];
-        let factor        = 2.5;
-        
-        if (oneColumnLeft && lastSize === 8) {
-            setLastSize(4);
-            setOneColumnLeft(!oneColumnLeft);
-            return 4;
-        } 
-
-        if (oneColumnLeft && lastSize === 4) {
-            setLastSize(8);
-            setOneColumnLeft(!oneColumnLeft);
-            return 8;
-        }
-        
-        if (oneColumnLeft && lastSize === 6) {
-            setLastSize(6);
-            setOneColumnLeft(!oneColumnLeft);
-            return 6;
-        } 
-
-        let result;
-
-        while (lastSize === result) {
-            result        = Math.floor(Math.random()*factor);
-        }
-        console.log(result);
-        setLastSize(result);
-
-
-    }
-
     return (
-        <Grid container spacing={2}>
+        <Grid container spacing={2} mt={2}>
             {posts.map((post) => (
-                <Grid item xs={12} md={8}>
-                    {post.title}
+                <Grid item xs={12} md={6} lg={4} key={post.sys.id}>
+                    <Card>
+                        <CardActionArea href={post.slug}>
+                            {post.titleImage ? (<CardMedia>
+                                <Image  src={post.titleImage.url}
+                                        height={post.titleImage.height}
+                                        width={post.titleImage.width}
+                                        layout="responsive"
+                                        sizes="100vw"
+                                        alt={post.titleImage.description}
+                                />
+                            </CardMedia>) : ''}
+                            <CardContent>
+                                <Typography color="secondary" variant="h4" component="div">
+                                    {post.title}
+                                </Typography>
+                                <Typography variant="body1">
+                                    {post.excerpt}
+                                </Typography>
+                            </CardContent>
+                        </CardActionArea>                        
+                    </Card>
                 </Grid>
             ))}
         </Grid>

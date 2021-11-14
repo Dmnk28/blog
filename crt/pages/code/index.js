@@ -14,9 +14,8 @@ TagOverview.defaultProps = {
     posts: [],
 }
 
-export async function getStaticProps() {
-    const tag = "Code"
-    const postPreviews = await ContentfulApi.getLatestPosts(tag);
+export async function getServerSideProps() {
+    const postPreviews = await ContentfulApi.getLatestPosts("Code");
 
     return {
         props: {
