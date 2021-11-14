@@ -136,9 +136,7 @@ export default class ContentfulApi {
 
   static async getSinglePost(slug) {
     const query = `{
-      blogPostCollection(
-        where: { slug: "${slug}" }
-      ) {
+      blogPostCollection(where: { slug: "${slug}" }) {
         items {
           sys {
             id
@@ -159,10 +157,34 @@ export default class ContentfulApi {
             width
             height
           }
+          content
+          contentImagesCollection{
+            total,
+            items {
+              title
+              description
+              contentType
+              fileName
+              size
+              url
+              width
+              height
+            }
+          }
+          sources
+          downloadablePdf {
+            title
+            description
+            contentType
+            fileName
+            size
+            url
+            width
+            height
+          }
         }
       }
-    }
-    `;
+    }`;
 
     const response = await this.callContentful(query);
 

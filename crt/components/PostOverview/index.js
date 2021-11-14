@@ -4,10 +4,10 @@ import Image from 'next/image';
 export default function PostOverview ({posts}) {
     
     return (
-        <Grid container spacing={2} mt={2}>
+        <Grid container spacing={4} mt={2}>
             {posts.map((post) => (
                 <Grid item xs={12} md={6} lg={4} key={post.sys.id}>
-                    <Card>
+                    <Card elevation={12}>
                         <CardActionArea href={post.slug}>
                             {post.titleImage ? (<CardMedia>
                                 <Image  src={post.titleImage.url}
