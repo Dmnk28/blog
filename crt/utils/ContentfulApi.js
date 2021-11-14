@@ -118,4 +118,56 @@ export default class ContentfulApi {
     return latestPosts;
   }
 
+  static async getAllSlugs() {
+    
+    const query = ` {
+      blogPostCollection {
+        items {
+          slug
+        }
+      }
+    }`;
+
+    const response = await this.callContentful(query);
+    const posts = response.data.blogPostCollection.items ? response.data.blogPostCollection.items : {total: 0, items: []};
+
+    return posts;
+  }
+
+  static async getSinglePost(slug) {
+    const query = `{
+      blogPostCollection(
+        where: { slug: "${slug}" }
+      ) {
+        items {
+          sys {
+            id
+          }
+          title
+          subtitle
+          slug
+          excerpt
+          tags
+          publicationDate
+          titleImage {
+            title
+            description
+            contentType
+            fileName
+            size
+            url
+            width
+            height
+          }
+        }
+      }
+    }
+    `;
+
+    const response = await this.callContentful(query);
+
+    const post = response.data.blogPostCollection.items[0] ? response.data.blogPostCollection.items[0] : {};
+
+    return post;
+  }
 }
