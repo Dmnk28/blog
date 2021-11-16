@@ -10,6 +10,10 @@ const getLightVsDark = (mode) => (mode === 'light') ? {
         secondary: {
             main: '#023E73',
         },
+        background: {
+            default: '#EBE9E8', //FFFEFC
+            paper: '#F5F4F2', //F2F1F0  EBE9E8
+        },
         text: {
             primary: grey[900],
             secondary: grey[800]

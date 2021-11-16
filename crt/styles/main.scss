@@ -13,9 +13,17 @@ body {
   margin: auto;
 }
 
+#blogpost-single-view {
+  padding: 4rem 3rem;
+}
+
+.postlist-card {
+  margin: 3rem;
+}
+
 .container {
     min-width: 99vw;
-  }
+}
   
 .main {
     min-height: 80vh;
