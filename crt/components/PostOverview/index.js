@@ -23,7 +23,7 @@ export default function PostOverview ({posts}) {
                                     {post.title}
                                 </Typography>
                                 <Typography variant="body1">
-                                    {post.excerpt}
+                                    {post.excerpt? post.excerpt : ''}
                                 </Typography>
                             </CardContent>
                         </CardActionArea>                        

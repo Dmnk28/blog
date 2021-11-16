@@ -1,16 +1,16 @@
 import Link from 'next/link';
 import Pagination from './Pagination';
-// import marked from 'marked';
-import ReactMarkdown from 'react-markdown';
-import ReactMarkdownRenderers from '@utils/ReactMarkdownRenderers'
+import Markdown from '@utils/MarkdownMUI';
+
 import {    formatPublishedDateForDateTime,
             formatPublishedDateForDisplay, } from '@utils/Date';
 
-import { Button } from "@mui/material";
+import { Button, Card, CardActionArea, CardContent, Paper, Typography } from "@mui/material";
 
 import NextLink from 'next/link'
 import { Link as MUILink } from '@mui/material';
 import MenuBar from '@components/MenuBar';
+import React from 'react';
             
 
 export default function PostList(props) {
@@ -20,41 +20,36 @@ export default function PostList(props) {
   const prevDisabled = parseInt(currentPage, 10) === 1;
 
   return (
-    <div className="container">
-      <ol>
+      <React.Fragment>
         {posts.map((post) => (
-          <li key={post.sys.id}>
-            <article>
-              <time dateTime={formatPublishedDateForDateTime(post.publicationDate)}>
-                {formatPublishedDateForDisplay(post.publicationDate)}
-              </time>
+          <Card sx={{m: 4}} key={post.sys.id} elevation={12}>
+            <CardActionArea href={post.slug}>
+              <CardContent px={4} py={3}>
+                <time dateTime={formatPublishedDateForDateTime(post.publicationDate)}>
+                  {formatPublishedDateForDisplay(post.publicationDate)}
+                </time>
 
-              <Link href={post.slug}>
-                <a>
-                  <h2>{post.title}</h2>
-                </a>
-              </Link>
+                <Typography vaiant="h2" component="h2">{post.title}</Typography>
 
-              <h6>Tags</h6>
-              <ul>
-                {post.tags.map((tag) => (
-                  <li key={tag}>{tag}</li>
-                ))}
-              </ul>
+                <h6>Tags</h6>
+                <ul>
+                  {post.tags.map((tag, index) => (
+                    <li key={tag + index.toString()}>{tag}</li>
+                  ))}
+                </ul>
 
-              <ReactMarkdown
-                renderers={ReactMarkdownRenderers(post.excerpt)}
-              >{post.excerpt}</ReactMarkdown>
-            </article>
-          </li>
+                <Markdown>{post.excerpt}</Markdown>
+              </CardContent>
+            </CardActionArea>
+          </Card>
         ))}
-      </ol>
+      
       <Pagination 
         totalPages={totalPages}
         currentPage={currentPage}
         nextDisabled={nextDisabled}
         prevDisabled={prevDisabled}
       />
-    </div>
+    </React.Fragment>
   );
 }
