@@ -24,9 +24,9 @@ function MyApp({ Component, pageProps }) {
 
       <div className="container">
         <MenuBar mode={mode} setMode={setMode}/>
-      
-        <Component {...pageProps} />
-
+        <div id="content-container">
+          <Component {...pageProps} />
+        </div>
         <Footer />
 
       </div>

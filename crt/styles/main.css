@@ -8,16 +8,20 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  overflow-y: scroll;
+}
+
+#content-container {
+  max-width: 70vw;
+  margin: auto;
 }
 
 .container {
-  padding: 0 2rem;
-  min-width: 90vw;
+  min-width: 99vw;
 }
 
 .main {
   min-height: 80vh;
-  padding: 2rem 0;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
