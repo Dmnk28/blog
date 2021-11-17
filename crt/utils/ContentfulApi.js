@@ -2,11 +2,10 @@ import { Config } from "@utils/Config";
 
 export default class ContentfulApi {
     
-  // Standard API Call for Contentfull: Get all Data fitting the passed querys (given in the functions below) and return it
+  /* Standard API Call for Contentfull: Get all Data fitting the passed querys (given in the functions below) and return it */
   static async callContentful(query) {
-    const fetchUrl = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`;
-  
-    const fetchOptions = {
+    const fetchUrl      = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`;
+    const fetchOptions  = {
       method: "POST",
       headers: {
         Authorization: `Bearer ${process.env.CONTENTFUL_DELIVERY_KEY}`,
@@ -25,68 +24,95 @@ export default class ContentfulApi {
     }
   }
 
-  /* Getting Total Number of Posts, Needed to Calculate Number of Pages in PostList */
-  
+  /* Getting Total Number of Posts, Needed to Calculate Number of Pages in PostList */ 
   static async getTotalPostsNumber() {
-    const query = `
-      {
+    const query = `{
         blogPostCollection {
           total
         }
-      }
-    `;
+      }`;
         
-    const response = await this.callContentful(query);
-    const totalPosts = response.data.blogPostCollection.total ? response.data.blogPostCollection.total : 0;
+    const response    = await this.callContentful(query);
+    const totalPosts  = response.data.blogPostCollection.total ? response.data.blogPostCollection.total : 0;
 
     return totalPosts;
   }
 
   /* Getting the PostSummaries for the current Page (Number of Items ruled by pagenumber (--> skip) and Posts per Page (--> limit)  */
-
   static async getPaginatedPostSummaries(page) {
-    const skipMultiplier = page === 1 ? 0 : page - 1;
-    const skip = skipMultiplier > 0 ? Config.pagination.pageSize * skipMultiplier : 0;
-
-    const query = `{
-        blogPostCollection(limit: ${Config.pagination.pageSize}, skip: ${skip}, order: publicationDate_DESC) {
-          total
-          items {
-            sys {
-              id
-            }
+    const skipMultiplier  = page === 1 ? 0 : page - 1;
+    const skip            = skipMultiplier > 0 ? Config.pagination.pageSize * skipMultiplier : 0;
+    const query           = `{
+      blogPostCollection(limit: ${Config.pagination.pageSize}, skip: ${skip}, order: publicationDate_DESC) {
+        total
+        items {
+          sys {
+            id
+          }
+          title
+          subtitle
+          slug
+          excerpt
+          tags
+          publicationDate
+          titleImage {
             title
-            subtitle
-            slug
-            excerpt
-            tags
-            publicationDate
-            titleImage {
-              title
-              description
-              contentType
-              fileName
-              size
-              url
-              width
-              height
-            }
+            description
+            contentType
+            fileName
+            size
+            url
+            width
+            height
           }
         }
-      }`;
+      }
+    }`;
 
     
-    const response = await this.callContentful(query);
-    const paginatedPostSummaries = response.data.blogPostCollection ? response.data.blogPostCollection : { total: 0, items: [] };
+    const response                = await this.callContentful(query);
+    const paginatedPostSummaries  = response.data.blogPostCollection ? response.data.blogPostCollection : { total: 0, items: [] };
 
     return paginatedPostSummaries;
   }
 
+  /* Getting the 12 Latest Posts Sortet by Date (Descending) */
+  static async getLatestPosts() {
+    const query = `{
+      blogPostCollection(limit: 12, order: publicationDate_DESC) {
+        total
+        items {
+          sys {
+            id
+          }
+          title
+          subtitle
+          slug
+          excerpt
+          tags
+          publicationDate
+          titleImage {
+            title
+            description
+            contentType
+            fileName
+            size
+            url
+            width
+            height
+          }
+        }
+      }
+    }`;
+
+    const response    = await this.callContentful(query);
+    const latestPosts = response.data.blogPostCollection ? response.data.blogPostCollection : { total: 0, items: [] };
+    
+    return latestPosts;
+  }
 
   /* Getting the Latest Posts Belonging to a Specific Tag */
-  
   static async getLatestPostsFilteredByTag(tagToFetch) {
-    
     const query = `{
       blogPostCollection(where: {tags_contains_some: "${tagToFetch}"}, limit: 12, order: publicationDate_DESC) {
         total
@@ -120,11 +146,8 @@ export default class ContentfulApi {
     return latestPosts;
   }
 
-
-  /* Generating Blogpost-Routes and -Pages */
-
+  /* Getting Blogpost-Slugs for the Post-Routes */
   static async getAllSlugs() {
-    
     const query = ` {
       blogPostCollection {
         items {
@@ -133,12 +156,13 @@ export default class ContentfulApi {
       }
     }`;
 
-    const response = await this.callContentful(query);
-    const posts = response.data.blogPostCollection.items ? response.data.blogPostCollection.items : {total: 0, items: []};
+    const response  = await this.callContentful(query);
+    const posts     = response.data.blogPostCollection.items ? response.data.blogPostCollection.items : {total: 0, items: []};
 
     return posts;
   }
 
+  /* Getting All the Blogpost-Data */
   static async getSinglePost(slug) {
     const query = `{
       blogPostCollection(where: { slug: "${slug}" }) {
@@ -191,9 +215,8 @@ export default class ContentfulApi {
       }
     }`;
 
-    const response = await this.callContentful(query);
-
-    const post = response.data.blogPostCollection.items[0] ? response.data.blogPostCollection.items[0] : {};
+    const response  = await this.callContentful(query);
+    const post      = response.data.blogPostCollection.items[0] ? response.data.blogPostCollection.items[0] : {};
 
     return post;
   }
