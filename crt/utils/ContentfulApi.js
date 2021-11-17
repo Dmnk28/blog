@@ -2,7 +2,7 @@ import { Config } from "@utils/Config";
 
 export default class ContentfulApi {
     
-  // Get all Data fitting the passed query and return it
+  // Standard API Call for Contentfull: Get all Data fitting the passed querys (given in the functions below) and return it
   static async callContentful(query) {
     const fetchUrl = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`;
   
@@ -25,9 +25,9 @@ export default class ContentfulApi {
     }
   }
 
-  // BlogQueries
+  /* Getting Total Number of Posts, Needed to Calculate Number of Pages in PostList */
+  
   static async getTotalPostsNumber() {
-    // Query getting total sum out of all Blog Posts returns something like {"data": {"blogPostCollection": {"total": 1}}}
     const query = `
       {
         blogPostCollection {
@@ -36,18 +36,18 @@ export default class ContentfulApi {
       }
     `;
         
-    // API-Call:
     const response = await this.callContentful(query);
     const totalPosts = response.data.blogPostCollection.total ? response.data.blogPostCollection.total : 0;
 
     return totalPosts;
   }
 
+  /* Getting the PostSummaries for the current Page (Number of Items ruled by pagenumber (--> skip) and Posts per Page (--> limit)  */
+
   static async getPaginatedPostSummaries(page) {
     const skipMultiplier = page === 1 ? 0 : page - 1;
     const skip = skipMultiplier > 0 ? Config.pagination.pageSize * skipMultiplier : 0;
 
-    // Get all blogPost Data
     const query = `{
         blogPostCollection(limit: ${Config.pagination.pageSize}, skip: ${skip}, order: publicationDate_DESC) {
           total
@@ -75,15 +75,17 @@ export default class ContentfulApi {
         }
       }`;
 
-    // Call out to the API
+    
     const response = await this.callContentful(query);
-
     const paginatedPostSummaries = response.data.blogPostCollection ? response.data.blogPostCollection : { total: 0, items: [] };
 
     return paginatedPostSummaries;
   }
+
+
+  /* Getting the Latest Posts Belonging to a Specific Tag */
   
-  static async getLatestPosts(tagToFetch) {
+  static async getLatestPostsFilteredByTag(tagToFetch) {
     
     const query = `{
       blogPostCollection(where: {tags_contains_some: "${tagToFetch}"}, limit: 12, order: publicationDate_DESC) {
@@ -117,6 +119,9 @@ export default class ContentfulApi {
     
     return latestPosts;
   }
+
+
+  /* Generating Blogpost-Routes and -Pages */
 
   static async getAllSlugs() {
     

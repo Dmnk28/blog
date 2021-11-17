@@ -15,7 +15,7 @@ TagOverview.defaultProps = {
 }
 
 export async function getServerSideProps() {
-    const postPreviews = await ContentfulApi.getLatestPosts("Ride");
+    const postPreviews = await ContentfulApi.getLatestPostsFilteredByTag("Ride");
 
     return {
         props: {

@@ -1,7 +1,4 @@
 import React from 'react';
-import { useState } from 'react';
-
-import Head from 'next/head';
 // import Image from 'next/image';
 import NextLink from 'next/link'
 import { Button, Link as MUILink } from '@mui/material';
