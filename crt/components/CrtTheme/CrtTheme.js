@@ -8,7 +8,7 @@ const getLightVsDark = (mode) => (mode === 'light') ? {
         },
         divider: '#D97904'[200],
         secondary: {
-            main: '#023E73',
+            main: '#307EA6', // Blau 118CBF / Lila: 6516F2
         },
         background: {
             default: '#EBE9E8', //FFFEFC

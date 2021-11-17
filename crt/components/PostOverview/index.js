@@ -5,7 +5,7 @@ import Masonry from '@mui/lab/Masonry';
 export default function PostOverview ({posts}) {
     
     return (
-        <Masonry columns={3} spacing={2} sx={{mt:2 }}>
+        <Masonry columns={{xs: 1, sm: 2,lg: 3}} spacing={2} sx={{mt:2 }}>
             {posts.map((post) => (
                 <Card key={post.sys.id} elevation={2}>
                     <CardActionArea href={post.slug}>

@@ -19,7 +19,7 @@ export async function getServerSideProps() {
 
     return {
         props: {
-            posts: postPreviews,
+            posts: postPreviews.items,
         }
     }
 }
