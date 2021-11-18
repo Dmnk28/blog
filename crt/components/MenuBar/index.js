@@ -22,7 +22,7 @@ export default function MenuBar({mode, setMode}) {
             <Toolbar>
                 <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
                     <NextLink href="/" passHref>
-                        <MUILink color="secondary" underline="hover">Code Ride Translate</MUILink>
+                        <MUILink sx={(mode === 'light') ? {color: '#F2527D', fontWeight: 600,} : {color: '#BF850B', fontWeight: 600,}} underline="hover">Code Ride Translate</MUILink>
                     </NextLink>
                 </Typography>
                 

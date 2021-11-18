@@ -15,7 +15,7 @@ export default function Home(props) {
           Welcome to CRT
         </h1>
         <NextLink href="/blog" passHref>
-          <Button variant="contained">
+          <Button color="tertiary" variant="contained">
             View all Posts
           </Button>
         </NextLink>
@@ -33,21 +33,10 @@ Home.defaultProps = {
 
 export async function getServerSideProps() {
   const allLatestPosts = await ContentfulApi.getLatestPosts();
-  console.log(allLatestPosts);
+  
   return {
     props: {
       posts: allLatestPosts.items,
     }
   }
 }
-/* 
-
-export async function getServerSideProps() {
-  const postPreviews = await ContentfulApi.getLatestPosts();
-
-  return {
-      props: {
-          posts: postPreviews.items,
-      }
-  }
-} */
