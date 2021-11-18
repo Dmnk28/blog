@@ -23,7 +23,8 @@ export default function PostList(props) {
       <React.Fragment>
         {posts.map((post) => (
           <Card sx={{m: 4}} key={post.sys.id} elevation={12}>
-            <CardActionArea href={post.slug}>
+            <NextLink href={"/" + post.slug} passHref>
+            <CardActionArea >
               <CardContent px={4} py={3}>
                 <time dateTime={formatPublishedDateForDateTime(post.publicationDate)}>
                   {formatPublishedDateForDisplay(post.publicationDate)}
@@ -41,6 +42,7 @@ export default function PostList(props) {
                 <Markdown>{post.excerpt}</Markdown>
               </CardContent>
             </CardActionArea>
+            </NextLink>
           </Card>
         ))}
       
