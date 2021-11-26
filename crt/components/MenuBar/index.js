@@ -2,10 +2,9 @@ import NextLink from 'next/link'
 import { AppBar, IconButton, Link as MUILink, Toolbar, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu'
 
-import { Button } from '@mui/material';
 import Brightness2 from '@mui/icons-material/Brightness2';
 import Brightness7 from '@mui/icons-material/Brightness7';
-
+import MuiNextButton from '@components/MuiNextButton';
 
 export default function MenuBar({mode, setMode}) {
 
@@ -26,18 +25,10 @@ export default function MenuBar({mode, setMode}) {
                     </NextLink>
                 </Typography>
                 
-                <NextLink href="/code" passHref>
-                    <Button color="inherit">Code</Button>
-                </NextLink>
-                <NextLink href="/ride" passHref>
-                    <Button color="inherit">Ride</Button>
-                </NextLink>
-                <NextLink href="/translate" passHref>
-                    <Button color="inherit">Translate</Button>
-                </NextLink>
-                <NextLink href="/blog" passHref>
-                    <Button color="inherit">All Blogposts</Button>
-                </NextLink>
+                <MuiNextButton href="/code" color="inherit" btnText="Code" deactivate={false}/>
+                <MuiNextButton href="/ride" color="inherit" btnText="Ride" deactivate={false}/>
+                <MuiNextButton href="/translate" color="inherit" btnText="Translate" deactivate={false}/>
+                <MuiNextButton href="/blog" color="inherit" btnText="All Blogposts" deactivate={false}/>
                 
                 <IconButton onClick={handleModeBtn} color="inherit">
                     {mode === 'light' ? <Brightness2 /> : <Brightness7 />}
