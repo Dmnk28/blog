@@ -1,7 +1,6 @@
 import React from 'react';
 // import Image from 'next/image';
-import NextLink from 'next/link'
-import { Button, Link as MUILink } from '@mui/material';
+import MuiNextButton from '@components/MuiNextButton';
 import PostOverview from '@components/PostOverview';
 import ContentfulApi from '@utils/ContentfulApi';
 
@@ -14,11 +13,7 @@ export default function Home(props) {
         <h1 className="title">
           Welcome to CRT
         </h1>
-        <NextLink href="/blog" passHref>
-          <Button color="tertiary" variant="contained">
-            View all Posts
-          </Button>
-        </NextLink>
+        <MuiNextButton href="/blog" variant="contained" size="large" color="tertiary" btnText="View all Posts" /> 
       </div>
 
       <PostOverview posts={posts} />

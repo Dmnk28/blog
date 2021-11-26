@@ -16,6 +16,10 @@ body {
   margin: auto;
 }
 
+#menubar {
+  width: 100%;
+}
+
 #blogpost-single-view {
   padding: 4rem 3rem;
 }
