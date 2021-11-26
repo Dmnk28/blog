@@ -1,7 +1,8 @@
-import { Button } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 
 import NextLink from 'next/link'
 import { Link as MUILink } from '@mui/material';
+import MuiNextButton from "@components/MuiNextButton";
 
 export default function Pagination(props) {
     const {totalPages, currentPage, prevDisabled, nextDisabled } = props;
@@ -13,35 +14,17 @@ export default function Pagination(props) {
     return (
         <ul id="pagination-ul">
             <li>
-                { prevDisabled && <Button id="prevBtn" variant="contained" disabled>
-                    <NextLink href={prevPageUrl} passHref>
-                        <MUILink variant="body" color="secondary">Previous Page</MUILink>
-                    </NextLink>
-                </Button> }
-
-                { !prevDisabled && <Button id="prevBtn" variant="contained">
-                    <NextLink href={prevPageUrl} passHref>
-                        <MUILink variant="body" color="secondary">Previous Page</MUILink>
-                    </NextLink>
-                </Button> }
+                { prevDisabled && <MuiNextButton href={prevPageUrl} variant="contained" size="small" btnText="Prev" deactivate={true} /> }
+                { !prevDisabled && <MuiNextButton href={prevPageUrl} variant="contained" size="small" color="tertiary" btnText="Prev" /> }
             </li>
             <li>
-                <Button variant="contained" disabled>
+                <Typography variant="h6" component="p" color="secondary">
                     Page {currentPage} of {totalPages}
-                </Button>
+                </Typography>
             </li>
             <li>
-                { nextDisabled && <Button id="prevBtn" variant="contained" disabled>
-                    <NextLink href={nextPageUrl} passHref>
-                        <MUILink variant="body" color="secondary">Next Page</MUILink>
-                    </NextLink>
-                </Button> }
-
-                { !nextDisabled && <Button id="prevBtn" variant="contained">
-                    <NextLink href={nextPageUrl} passHref>
-                        <MUILink variant="body" color="secondary">next Page</MUILink>
-                    </NextLink>
-                </Button> }
+                { nextDisabled && <MuiNextButton href={nextPageUrl} variant="contained" size="small" btnText="Next" deactivate={true} /> }
+                { !nextDisabled && <MuiNextButton href={nextPageUrl} variant="contained" size="small" color="tertiary" btnText="Next" /> }
             </li>
         </ul>
     );
