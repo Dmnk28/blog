@@ -38,6 +38,7 @@ const getLightVsDark = (mode) => (mode === 'light') ? {
         secondary: {
             main:           '#F2527D',
             light:          '#F2527D'[800],
+            contrastText:   '#132336',
         },
         tertiary: { 
             light:          '#D9AD4E',

@@ -15,7 +15,7 @@ export default function Pagination(props) {
         <ul id="pagination-ul">
             <li>
                 { prevDisabled && <MuiNextButton href={prevPageUrl} variant="contained" size="small" btnText="Prev" deactivate={true} /> }
-                { !prevDisabled && <MuiNextButton href={prevPageUrl} variant="contained" size="small" color="tertiary" btnText="Prev" /> }
+                { !prevDisabled && <MuiNextButton href={prevPageUrl} variant="contained" size="small" color="secondary" btnText="Prev" /> }
             </li>
             <li>
                 <Typography variant="h6" component="p" color="secondary">
@@ -24,7 +24,7 @@ export default function Pagination(props) {
             </li>
             <li>
                 { nextDisabled && <MuiNextButton href={nextPageUrl} variant="contained" size="small" btnText="Next" deactivate={true} /> }
-                { !nextDisabled && <MuiNextButton href={nextPageUrl} variant="contained" size="small" color="tertiary" btnText="Next" /> }
+                { !nextDisabled && <MuiNextButton href={nextPageUrl} variant="contained" size="small" color="secondary" btnText="Next" /> }
             </li>
         </ul>
     );
