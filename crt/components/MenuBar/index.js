@@ -103,7 +103,7 @@ export default function MenuBar({mode, setMode}) {
                         
                         <List>
                         {menuItemsArray.map((element, index) => (
-                            <React.Fragment key="test" key={element.name + index.toString()}>
+                            <React.Fragment key={element.name + index.toString()}>
                                 <NextLink href={element.href} passHref>
                                     <ListItemButton onClick={handleBurgerClose} component="a">
                                         <ListItemText primary={element.name}/>
