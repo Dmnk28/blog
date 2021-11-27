@@ -3,11 +3,13 @@ import NextLink from 'next/link';
 import { Card, CardActionArea, CardContent, CardMedia, Grid, Typography } from '@mui/material';
 import Image from 'next/image';
 import Masonry from '@mui/lab/Masonry';
+import { Box } from '@mui/system';
 
 export default function PostOverview ({posts}) {
     
     return (
-        <Masonry columns={{xs: 1, sm: 2,lg: 3}} spacing={2} sx={{mt:2 }}>
+        <Box display="flex" justifyContent="center" p={0} mb={3}>
+            <Masonry columns={{xs: 1, sm: 2,lg: 3}} spacing={2}>
             {posts.map((post) => (
                 <Card key={post.sys.id} elevation={2}>
                     <NextLink href={"/" + post.slug} passHref>
@@ -33,6 +35,7 @@ export default function PostOverview ({posts}) {
                     </NextLink>               
                 </Card>
             ))}
-        </Masonry>
+            </Masonry>
+        </Box>
     );
 }

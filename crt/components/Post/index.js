@@ -10,7 +10,7 @@ export default function Post (props) {
 
     return (
         <Box mt={2} >
-            <Paper id="blogpost-single-view" elevation={6}>
+            <Paper sx={{p:2}} elevation={6}>
                 <Typography variant="h2" component="h1">
                     {post.title}
                 </Typography>

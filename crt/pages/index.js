@@ -9,7 +9,7 @@ export default function Home(props) {
   return (
     <main>
       
-      <div className="main">
+      <div className="welcome-banner">
         <h1 className="title">
           Welcome to CRT
         </h1>

@@ -6,6 +6,7 @@ import {    formatPublishedDateForDateTime,
             formatPublishedDateForDisplay, } from '@utils/Date';
 
 import { Card, Chip, CardActionArea, CardContent, Typography, Divider } from "@mui/material";
+import { Box } from '@mui/system';
        
 
 export default function PostList(props) {
@@ -15,7 +16,7 @@ export default function PostList(props) {
   const prevDisabled = parseInt(currentPage, 10) === 1;
 
   return (
-      <React.Fragment>
+      <Box>
         {posts.map((post) => (
           <Card sx={{m: 4}} key={post.sys.id} elevation={12}>
             <NextLink href={"/" + post.slug} passHref>
@@ -60,6 +61,6 @@ export default function PostList(props) {
         nextDisabled={nextDisabled}
         prevDisabled={prevDisabled}
       />
-    </React.Fragment>
+    </Box>
   );
 }

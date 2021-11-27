@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import getLightVsDark from '@components/CrtTheme/CrtTheme';
-import { ThemeProvider, createTheme, CssBaseline, useMediaQuery } from '@mui/material';
+import { Box, ThemeProvider, createTheme, CssBaseline } from '@mui/material';
 
 import Head from 'next/head';
 import MenuBar from '@components/MenuBar';
@@ -24,9 +24,11 @@ function MyApp({ Component, pageProps }) {
 
       <div className="container">
         <MenuBar mode={mode} setMode={setMode}/>
-        <div id="content-container">
-          <Component {...pageProps} />
-        </div>
+        <main>
+          <Box display="flex" justifyContent="center" m={2}>
+            <Component {...pageProps} />
+          </Box>
+        </main>
         <Footer />
 
       </div>
