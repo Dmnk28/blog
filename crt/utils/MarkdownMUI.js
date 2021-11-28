@@ -3,6 +3,9 @@ import ReactMarkdown from 'markdown-to-jsx';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
+import Image from 'next/image';
+import image from 'next/image';
+import { uriTransformer } from 'react-markdown';
 
 function MarkdownListItem(props) {
   return <Box component="li" sx={{ mt: 1, typography: 'body1' }} {...props} />;
@@ -42,8 +45,14 @@ const options = {
     li: {
       component: MarkdownListItem,
     },
+    img: {
+      props: {
+        className: 'content-image'
+      }
+    }
   },
 };
+
 
 export default function Markdown(props) {
   return <ReactMarkdown options={options} {...props} />;

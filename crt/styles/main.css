@@ -62,6 +62,11 @@ body {
   margin-bottom: 0.7rem;
 }
 
+.content-image {
+  max-height: 400px;
+  margin: auto;
+}
+
 #footer {
   padding: 2rem;
   display: -webkit-box;

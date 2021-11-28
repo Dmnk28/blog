@@ -1,7 +1,5 @@
 
 import { Box, Paper, Typography } from "@mui/material";
-import Image from 'next/image';
-import marked from 'marked';
 import Markdown from "@utils/MarkdownMUI";
 
 
@@ -15,8 +13,9 @@ export default function Post (props) {
                     {post.title}
                 </Typography>
                 
-                <Markdown>{post.content}</Markdown>
-
+                <Box sx={{position: 'relative'}}>
+                    <Markdown>{post.content}</Markdown>
+                </Box>
             </Paper>
         </Box>
     );
