@@ -190,6 +190,9 @@ export default class ContentfulApi {
           contentImagesCollection{
             total,
             items {
+              sys {
+                id
+              }
               title
               description
               contentType

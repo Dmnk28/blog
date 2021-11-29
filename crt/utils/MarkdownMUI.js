@@ -17,17 +17,23 @@ const options = {
       component: Typography,
       props: {
         gutterBottom: true,
-        variant: 'h3',
+        variant: 'h4',
         component: 'h2',
+        color: 'secondary',
       },
     },
     h2: {
       component: Typography,
-      props: { gutterBottom: true, variant: 'h5', component: 'h3' },
+      props: { 
+        gutterBottom: true, 
+        variant: 'h6', 
+        component: 'h3' },
     },
     h3: {
       component: Typography,
-      props: { gutterBottom: true, variant: 'subtitle1' },
+      props: { 
+        gutterBottom: true, 
+        variant: 'subtitle1' },
     },
     h4: {
       component: Typography,
@@ -39,7 +45,9 @@ const options = {
     },
     p: {
       component: Typography,
-      props: { paragraph: true },
+      props: { 
+        paragraph: true 
+      },
     },
     a: { component: Link },
     li: {
