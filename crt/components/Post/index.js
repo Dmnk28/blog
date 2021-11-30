@@ -11,7 +11,7 @@ export default function Post (props) {
         <Box mt={2} >
             <Paper sx={{mx: {sm: 8, md: 14, lg: 30}}} elevation={6}>
                 <Box borderRadius="5px" overflow="hidden">
-                    <Image src={post.titleImage.url} layout="responsive" width={post.titleImage.width} height={post.titleImage.height}/>
+                    {post.titleImage ? (<Image src={post.titleImage.url} alt={post.titleImage.title} layout="responsive" width={post.titleImage.width} height={post.titleImage.height}/>) : ''}
                 </Box>            
                 <Box sx={{p: {xs: 3, sm: 4, md: 6}}}>
                 
@@ -21,11 +21,9 @@ export default function Post (props) {
                 
                     { newContent.map((paragraph, index) => {
                         // if (paragraph == false) return;
-                        if (paragraph.match(/^!\[/)) {
-                            const link = paragraph.replace(/^!\[[\w*\s]*\w*\]\(\/\/images.contentful.com|\)/g, '');
-                            
+                        if (paragraph.match(/^!\[/) && contentImages) {
+                            const link = paragraph.replace(/^!\[[\w*\s]*\w*\]\(\/\/images.contentful.com|\)/g, '');                            
                             let imageNumber = 0;
-
                             for (let i = 0; i < contentImages.length; i++) {
                                 if (contentImages[i].url.endsWith(link)) imageNumber = i;
                             }
@@ -33,7 +31,8 @@ export default function Post (props) {
                             return ( <Box key={contentImages[imageNumber].sys.id} sx={{p: 4, display: 'flex', justifyContent: 'center'}}>
                                         <Box sx={{maxWidth: {xs: '100%', md: '90%', lg: '80%'}}}>
                                             <Image
-                                                src={contentImages[imageNumber].url} 
+                                                src={contentImages[imageNumber].url}
+                                                alt={contentImages[imageNumber].url} 
                                                 layout="intrinsic"
                                                 width={contentImages[imageNumber].width}
                                                 height={contentImages[imageNumber].height}    
