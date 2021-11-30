@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline />
+      <CssBaseline enableColorScheme/>
       <Head>
         <title>Code Ride Translate</title>
         <meta name="description" content="A Blog tributed to coding, cycling and languages" />
@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="container">
+      <div id="container">
         <MenuBar mode={mode} setMode={setMode}/>
         <main>
           <Box display="flex" justifyContent="center" m={2}>

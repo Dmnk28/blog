@@ -1,20 +1,20 @@
-import { grey } from "@mui/material/colors";
+import background_dark1 from './background_dark1.svg'
 
 const getLightVsDark = (mode) => (mode === 'light') ? {
     /* Light Side */
     palette: {
         primary: {
-            main:           '#118F74', 
+            main:            '#46B8AA', //'#118F74', 
         },
         divider:            '#D97904'[200],
         secondary: {
-            main:           '#7F0015', 
+            main:           '#304D5C', 
             contrastText:   '#EBE9E8',
         },
         tertiary: { 
             light:          '#F59DB4',
-            main:           '#304D5C',
-            dark:           '#BF4163',
+            main:           '#BF4163',
+            dark:           '#8C3048',
             darker:         '#73273B', 
             contrastText:   '#F5F4F2',
         },
@@ -69,7 +69,8 @@ const getLightVsDark = (mode) => (mode === 'light') ? {
             focus:                  'rgba(0, 0, 0, 0.12)', 
             focusOpacity:           0.12, 
             activatedOpacity:       0.12, 
-        }
+        },
+
     },
     components: {
         MuiAppBar: {
@@ -78,8 +79,9 @@ const getLightVsDark = (mode) => (mode === 'light') ? {
                     backgroundColor: '#105961', //147580
                 }
             }
-        }
-    }};
+        },
+    },
+};
 
 
 export default getLightVsDark;

@@ -9,8 +9,8 @@ export default function Post (props) {
     const contentImages = post.contentImagesCollection.items;
     return (
         <Box mt={2} >
-            <Paper sx={{mx: {sm: 8, md: 14, lg: 30}}} elevation={6}>
-                <Box borderRadius="5px" overflow="hidden">
+            <Paper sx={{mx: {sm: 8, md: 14, lg: 30}}} elevation={15}>
+                <Box borderRadius="5px 5px 0 0" overflow="hidden">
                     {post.titleImage ? (<Image src={post.titleImage.url} alt={post.titleImage.title} layout="responsive" width={post.titleImage.width} height={post.titleImage.height}/>) : ''}
                 </Box>            
                 <Box sx={{p: {xs: 3, sm: 4, md: 6}}}>
