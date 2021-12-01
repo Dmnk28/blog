@@ -28,7 +28,16 @@ const getLightVsDark = (mode) => (mode === 'light') ? {
         },
         contrastThreshold: 3,
         tonalOffset: 0.2,
-    } } : {
+    },
+    components: {
+        MuiAppBar: {
+            styleOverrides: {
+                root: {
+                    backgroundColor: '#46B8AA', //147580
+                }
+            }
+        },
+    }} : {
     /* Dark Side */
     palette: {    
         primary: {
