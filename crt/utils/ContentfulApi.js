@@ -223,4 +223,32 @@ export default class ContentfulApi {
 
     return post;
   }
+
+  /* Get a Single Page Content from Contentful */
+  static async getPage(id) {
+    const query = `{ 
+      page (id: "${id}") {
+        sys {
+          id
+        }
+        title
+        titleImage{
+          sys {
+            id
+          }
+          url
+          height
+          width
+          title
+          description
+        }
+        text
+      }
+    }`;
+
+    const response  = await this.callContentful(query);
+    const content   = response.data.page ? response.data.page : {};
+
+    return content;
+  }
 }
