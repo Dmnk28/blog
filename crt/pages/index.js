@@ -4,9 +4,10 @@ import MuiNextButton from '@components/MuiNextButton';
 import PostOverview from '@components/PostOverview';
 import ContentfulApi from '@utils/ContentfulApi';
 import { Box, Typography } from '@mui/material';
+import Markdown from 'markdown-to-jsx';
 
 export default function Home(props) {
-  const { posts } = props
+  const { posts, about } = props
   return (
     <main>
       
@@ -22,20 +23,29 @@ export default function Home(props) {
 
       <PostOverview posts={posts} />
 
+      <article>
+        <Box sx={{m: 7}}>
+          <Typography variant="h4" component="h2">
+            {about.title}
+          </Typography>
+          <Markdown>
+            {about.text}
+          </Markdown>
+        </Box>
+      </article>
+
     </main>
   )
 }
 
-Home.defaultProps = {
-  latestPosts: [],
-}
-
 export async function getServerSideProps() {
   const allLatestPosts = await ContentfulApi.getLatestPosts();
+  const aboutContent   = await ContentfulApi.getPage('xqOWhx23Vu8UhHeor5LpN');
   
   return {
     props: {
       posts: allLatestPosts.items,
+      about: aboutContent,
     }
   }
 }
