@@ -7,6 +7,8 @@ import {    formatPublishedDateForDateTime,
 
 import { Card, Chip, CardActionArea, CardContent, Typography, Divider, CardMedia } from "@mui/material";
 import { Box } from '@mui/system';
+
+import { ArrowForwardIos } from '@mui/icons-material';
        
 
 export default function PostList(props) {
@@ -50,9 +52,15 @@ export default function PostList(props) {
                   ))}
                 </div>
 
-                <div className="postlist-excerpt">
+                <Box className="postlist-excerpt">
                   <Markdown>{post.excerpt}</Markdown>
-                </div>
+                </Box>
+                
+
+                <Box display="flex" justifyContent="end">
+                  <ArrowForwardIos color="tertiary"/>
+                </Box>
+                
               </CardContent>
             </CardActionArea>
             </NextLink>
