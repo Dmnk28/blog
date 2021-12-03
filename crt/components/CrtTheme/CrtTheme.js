@@ -8,14 +8,12 @@ const getLightVsDark = (mode) => (mode === 'light') ? {
         },
         divider:            '#D97904'[200],
         secondary: {
-            main:           '#304D5C', 
+            main:           '#105961', 
             contrastText:   '#EBE9E8',
         },
         tertiary: { 
-            light:          '#F59DB4',
             main:           '#BF4163',
             dark:           '#8C3048',
-            darker:         '#73273B', 
             contrastText:   '#F5F4F2',
         },
         background: {

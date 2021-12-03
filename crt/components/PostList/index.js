@@ -5,7 +5,7 @@ import NextLink from 'next/link'
 import {    formatPublishedDateForDateTime,
             formatPublishedDateForDisplay, } from '@utils/Date';
 
-import { Card, Chip, CardActionArea, CardContent, Typography, Divider } from "@mui/material";
+import { Card, Chip, CardActionArea, CardContent, Typography, Divider, CardMedia } from "@mui/material";
 import { Box } from '@mui/system';
        
 
@@ -16,12 +16,16 @@ export default function PostList(props) {
   const prevDisabled = parseInt(currentPage, 10) === 1;
 
   return (
-      <Box>
+      <Box mx={{xl:27}}>
         {posts.map((post) => (
           <Card sx={{m: 4}} key={post.sys.id} elevation={12}>
             <NextLink href={"/" + post.slug} passHref>
             <CardActionArea >
-              <CardContent px={4} pb={3}>
+              {post.titleImage && (<CardMedia component="img"
+                          height="300 "
+                          image={post.titleImage.url}
+                          alt={post.titleImage.title}/>
+              )}<CardContent px={4} pb={3}>
                 
                 <Typography variant="overline">
                   <time dateTime={formatPublishedDateForDateTime(post.publicationDate)}>

@@ -9,31 +9,11 @@ import Brightness7 from '@mui/icons-material/Brightness7';
 import CloseIcon from '@mui/icons-material/Close';
 import MuiNextButton from '@components/MuiNextButton';
 
-export default function MenuBar({mode, setMode}) {
-    const [burgerOpen, setBurgerOpen] = React.useState(false);
+import { menuItemsArray } from './_menuItems';
 
-    const menuItemsArray = [
-        {
-            name: 'Start',
-            href: '/'
-        },
-        {
-            name: 'Code',
-            href: '/code',
-        },
-        {
-            name: 'Ride',
-            href: '/ride',
-        },
-        {
-            name: 'Translate',
-            href: '/translate',
-        },
-        {
-            name: 'All Blogposts',
-            href: '/blog',
-        },
-    ]
+export default function MenuBar(props) {
+    const { mode, setMode } = props;
+    const [burgerOpen, setBurgerOpen] = React.useState(false);
 
     const handleBurgerOpen = () => setBurgerOpen(true); 
     const handleBurgerClose = () => setBurgerOpen(false);
@@ -51,32 +31,39 @@ export default function MenuBar({mode, setMode}) {
             <Toolbar>
                 <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
                     <NextLink href="/" passHref>
-                        <MUILink sx={(mode === 'light') ? {color: '#304D5C', fontWeight: 600,} : {color: '#BF850B', fontWeight: 600,}} underline="hover">CRT</MUILink>
+                        <MUILink    sx={ (mode === 'light') ? {color: '#304D5C', fontWeight: 600,} : 
+                                        {color: '#BF850B', fontWeight: 600,} } 
+                                    underline="hover"
+                        >
+                                    CRT
+                        </MUILink>
                     </NextLink>
                 </Typography>
 
                 <Box sx={{display: {xs: 'none', md: 'flex'}}}>
                     {menuItemsArray.map((element, index) => (
-                        <MuiNextButton key={element.name + index.toString()} href={element.href} color="inherit" btnText={element.name} deactivate={false}/>
+                        <MuiNextButton  key={element.name + index.toString()} 
+                                        href={element.href} 
+                                        color="inherit" 
+                                        btnText={element.name} 
+                                        deactivate={false}/>
                     ))}
                     <Button onClick={handleModeBtn} color="inherit">
                         {mode === 'light' ? <Brightness2 /> : <Brightness7 />}
                     </Button>
                 </Box>
                 
-                <Button
-                    id="burgerButton"
-                    size="large"
-                    edge="start"
-                    color="inherit"
-                    aria-label="burgermenu"
-                    onClick={handleBurgerOpen}
-                    sx={{ display: {xs: 'flex', md: 'none'}}}
+                <Button id="burgerButton"
+                        size="large"
+                        edge="start"
+                        color="inherit"
+                        aria-label="burgermenu"
+                        onClick={handleBurgerOpen}
+                        sx={{ display: {xs: 'flex', md: 'none'}}}
                 >
                     <MenuIcon />
                 </Button>
-                <Modal 
-                        open={burgerOpen}
+                <Modal  open={burgerOpen}
                         onClose={handleBurgerClose}
                         aria-label="Mobile Menu"
                 >

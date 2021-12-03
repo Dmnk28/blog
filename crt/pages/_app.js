@@ -25,7 +25,7 @@ function MyApp({ Component, pageProps }) {
       <div id="container">
         <MenuBar mode={mode} setMode={setMode}/>
         <main>
-          <Box display="flex" justifyContent="center" m={2}>
+          <Box display="flex" justifyContent="center" m={2} mx={{lg:30}}>
             <Component {...pageProps} />
           </Box>
         </main>
