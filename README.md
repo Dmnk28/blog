@@ -12,13 +12,9 @@ Because it was my first Next.js-project and I never used Contentful before I sim
 From there on it's my own design, thinking and style of implementation. 
 
 ## ToDos
-- Long Cards for BlogList (Horizontal Carrousel??!)
-- normal Cards for normal Blogpost-Overviews mybe combining it with masonry
-- Blogpost-Page 
+- Long Cards for BlogList (Horizontal Carrousel ??!)
 - Some Kind of Carrousel/Slider for recent Blogposts
-- Images
-- Responsive Menu
-- Better coloring in Theme and Palette! 
+- Images 
 
 ## What I learned
 ### in general:
@@ -34,6 +30,14 @@ From there on it's my own design, thinking and style of implementation.
 - using the the Next link component in a Next app might seem logical, AND if you don't the App will be loaded freshly on the given href [setting back components state and so on]
 - launching an Next.js-App with [vercel](https://vercel.com). It was my favorite (because I dont't have any server, only a hosting package and a bunch of domains)
 - use getStaticProps wherever possible (Blogposts, simple static sites, ...). It will load faster than getServerSideProps
+- using the Image-Component
+- fetching data from Contentful
+    - using the Image-Component for Contentful-Images, bound in Markdown-Fields:
+        - added aditional contentfield (contentImages), where the data (url, title, description, ...) is stored
+        - before rendering the Markdown-Content it's scanned after an Markdown-Image-Annotation, and splitted in an Array. 
+        - the Link used in the Markdown is shortened and due to it containing the Contentful-ID of the Image it is unique  
+        - that Link is compared to the URLs in Array of contentImages where all the additional data (height, width, description, title...) are found and loaded from
+    - this solution might be strange in comparison to simply render the markdown, but it brings the advantage that it loads all the centralized informations belonging to the image. Every time changes are made to the picture-metadata it will be rendered in the app as well. (In the other way, the markdown would have to be changed)
 
 
 ### Contentful
@@ -41,9 +45,12 @@ From there on it's my own design, thinking and style of implementation.
 - Edit Content
 - Installing & Using GraphQL-Playground
 
+
 ### MUI
 - reading Documentations carefully (MUI Masonry is from the lab-package, not core. So it works only if you install lab too 🤣)
-- Masonry is King 
+- Masonry is King
+- Creating an responsive menu with burger menu
+- Theming and Dark/Light Toggle with MUI 
 - combining MUI with Next (Problems with Link-Modules avoided).
     - utilize dark mode/light mode toggle in MUI
     - more theme-configuration in MUI (Background with CssBaseline, ...) 
