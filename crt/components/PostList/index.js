@@ -18,9 +18,10 @@ export default function PostList(props) {
   const prevDisabled = parseInt(currentPage, 10) === 1;
 
   return (
-      <Box mx={{xl:27}}>
+      <Box mx={{xs: 0, sm: 6, md: 20, lg: 40, xl: 57}}>
         {posts.map((post) => (
-          <Card sx={{m: 4}} key={post.sys.id} elevation={12}>
+          <article key={post.sys.id}>
+          <Card sx={{m: 4}} elevation={12}>
             <NextLink href={"/" + post.slug} passHref>
             <CardActionArea >
               {post.titleImage && (<CardMedia component="img"
@@ -65,6 +66,7 @@ export default function PostList(props) {
             </CardActionArea>
             </NextLink>
           </Card>
+          </article>
         ))}
       
       <Pagination 

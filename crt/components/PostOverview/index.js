@@ -1,6 +1,6 @@
 import NextLink from 'next/link';
 
-import { Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Typography } from '@mui/material';
+import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
 import Image from 'next/image';
 import Masonry from '@mui/lab/Masonry';
 import { Box } from '@mui/system';
@@ -9,10 +9,11 @@ import { ArrowForwardIos } from '@mui/icons-material';
 export default function PostOverview ({posts}) {
     
     return (
-        <Box display="flex" justifyContent="center" p={0} mb={3}>
+        <Box display="flex" justifyContent="center" my={3} mx={{sm: 3, md: 4, lg: 10, xl: 30}}>
             <Masonry columns={{xs: 1, sm: 2,lg: 3}} spacing={2}>
             {posts.map((post) => (
-                <Card key={post.sys.id} elevation={7}>
+                <article key={post.sys.id}>
+                <Card elevation={7}>
                     <NextLink href={"/" + post.slug} passHref>
                     <CardActionArea>
                         {post.titleImage ? (<CardMedia>
@@ -37,8 +38,9 @@ export default function PostOverview ({posts}) {
                             </Box>
                         </CardContent>
                     </CardActionArea>         
-                    </NextLink>               
+                    </NextLink>
                 </Card>
+                </article>               
             ))}
             </Masonry>
         </Box>

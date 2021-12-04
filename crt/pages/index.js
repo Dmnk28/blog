@@ -3,36 +3,44 @@ import React from 'react';
 import MuiNextButton from '@components/MuiNextButton';
 import PostOverview from '@components/PostOverview';
 import ContentfulApi from '@utils/ContentfulApi';
-import { Box, Typography } from '@mui/material';
+import { Box, Card, CardContent, Typography } from '@mui/material';
 import Markdown from 'markdown-to-jsx';
+
+import background_dark2 from '@components/CrtTheme/background_dark2.svg';
 
 export default function Home(props) {
   const { posts, about } = props
   return (
     <main>
       
-      <Box className="welcome-banner">
-        <Typography variant="h3" align="center" component="h1">
-          Willkommen zu Code Ride Translate
-        </Typography>
-        <Typography variant="h6" align="center" component="p" sx={{mt:1, mb:4}}>
-          Einem Blog rund um Frontend Development, Rennräder und orientalische Literatur
-        </Typography>
-        <MuiNextButton href="/blog" variant="contained" size="large" color="tertiary" btnText="View all Posts" /> 
-      </Box>
-
-      <PostOverview posts={posts} />
-
-      <article>
-        <Box sx={{m: 7}}>
-          <Typography variant="h4" component="h2">
-            {about.title}
+      <section>
+        <Box className="welcome-banner">
+          <Typography variant="h3" align="center" component="h1">
+            Willkommen zu Code Ride Translate
           </Typography>
-          <Markdown>
-            {about.text}
-          </Markdown>
+          <Typography variant="h6" align="center" component="p" sx={{mt:1, mb:4}}>
+            Einem Blog rund um Frontend Development, Rennräder und orientalische Literatur
+          </Typography>
+          <MuiNextButton href="/blog" variant="contained" size="large" color="tertiary" btnText="View all Posts" /> 
         </Box>
-      </article>
+      </section>
+      
+      <section>
+        <PostOverview posts={posts} />
+      </section>
+
+      <section>
+        <Card sx={{my: 10, mx: {sm: 10, md: 18, lg: 30, xl: 57}}} >
+          <CardContent>
+            <Typography variant="h4" component="h2">
+              {about.title}
+            </Typography>
+            <Markdown>
+              {about.text}
+            </Markdown>
+          </CardContent>
+        </Card>
+      </section>
 
     </main>
   )
