@@ -35,6 +35,21 @@ const getLightVsDark = (mode) => (mode === 'light') ? {
                 }
             }
         },
+        MuiCssBaseline: {
+            styleOverrides: {
+                body: {
+                    background:         'url("/background_light1.svg") no-repeat fixed',
+                    backgroundPosition:     'bottom left',
+                    backgroundSize:         'cover',
+                },
+                '#footer': {
+                    background:         'url("/background_footer_light2.png")',
+                    backgroundSize:     'cover',
+                    backgroundPosition: 'top left',
+                    backgroundColor:    'transparent',
+                }
+            }
+        }
     }} : {
     /* Dark Side */
     palette: {    
@@ -87,6 +102,14 @@ const getLightVsDark = (mode) => (mode === 'light') ? {
                 }
             }
         },
+        MuiCssBaseline: {
+            styleOverrides: {
+                body: {
+                    backgroundImage:      'url("/background_dark2.svg")',
+                    backgroundSize:        'cover',
+                }
+            }
+        }
     },
 };
 
