@@ -12,9 +12,11 @@ Because it was my first Next.js-project and I never used Contentful before I sim
 From there on it's my own design, thinking and style of implementation. 
 
 ## ToDos
-- Long Cards for BlogList (Horizontal Carrousel ??!)
-- Some Kind of Carrousel/Slider for recent Blogposts
-- Images 
+* Long Cards for BlogList (Horizontal Carrousel ??!)
+* Some Kind of Carrousel/Slider for recent Blogposts
+* Images
+* Make an Recipe App for the Food-Stuff to link to
+    * Make it in Vue!
 
 ## What I learned
 ### in general:
