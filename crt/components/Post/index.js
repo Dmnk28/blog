@@ -1,6 +1,7 @@
 import Image from "next/image";
-import { Box, Paper, Typography } from "@mui/material";
+import { Box, Divider, Paper, Typography } from "@mui/material";
 import Markdown from "@utils/MarkdownMUI";
+import TagChips from "@components/TagChips";
 
 
 export default function Post (props) {
@@ -15,10 +16,13 @@ export default function Post (props) {
                 </Box>            
                 <Box sx={{p: {xs: 3, sm: 4, md: 6}}}>
                 
-                    <Typography variant="h2" component="h1" color="secondary">
+                    <Typography variant="h2" component="h1" color="secondary" sx={{mb: 3}}>
                         {post.title}
                     </Typography>
-                
+                    
+                    <TagChips tags={post.tags}/>
+                    
+                    <Divider sx={{my: 3}} />
                     { newContent.map((paragraph, index) => {
                         // if (paragraph == false) return;
                         if (paragraph.match(/^!\[/) && contentImages) {

@@ -9,6 +9,7 @@ import { Card, Chip, CardActionArea, CardContent, Typography, Divider, CardMedia
 import { Box } from '@mui/system';
 
 import { ArrowForwardIos } from '@mui/icons-material';
+import TagChips from '@components/TagChips';
        
 
 export default function PostList(props) {
@@ -40,18 +41,8 @@ export default function PostList(props) {
                 </Typography>
 
                 <Divider sx={{mb:2}} />
-
-                <div className="postlist-tags">
-                  {post.tags.map((tag, index) => (
-                    <Chip key={tag + index.toString()} 
-                          size="small" 
-                          variant="outlined"
-                          color="tertiary" 
-                          label={tag}
-                          sx={{mr:1}} 
-                    />
-                  ))}
-                </div>
+                
+                <TagChips tags={post.tags}/>
 
                 <Box className="postlist-excerpt">
                   <Markdown>{post.excerpt}</Markdown>
