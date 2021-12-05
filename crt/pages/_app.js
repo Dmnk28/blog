@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import getLightVsDark from '@components/CrtTheme/CrtTheme';
 import { Box, ThemeProvider, createTheme, CssBaseline } from '@mui/material';
 
@@ -10,6 +10,25 @@ import Footer from '@components/Footer';
 function MyApp({ Component, pageProps }) {
   const [mode, setMode]   =   useState();
   
+  useEffect(() => {
+    getLocalMode();
+  },[]);
+
+  useEffect(() => {
+    saveLocalMode();
+  }, [mode])
+
+  const saveLocalMode = () => {
+    localStorage.setItem('mode', JSON.stringify(mode));
+  }
+
+  const getLocalMode = () => {
+    if (localStorage.getItem('mode') === String) {
+      const localMode = JSON.parse(localStorage.getItem('mode'));
+      setMode(localMode);
+    }
+  }
+
   const theme = createTheme(getLightVsDark(mode));
 
   return (
@@ -23,7 +42,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
 
       <div id="container">
-        <MenuBar mode={mode} setMode={setMode}/>
+        <MenuBar mode={mode} setMode={setMode} saveLocalMode={saveLocalMode} />
         <main>
           <Box id="contentBox" display="flex" justifyContent="center">
             <Component {...pageProps} />
