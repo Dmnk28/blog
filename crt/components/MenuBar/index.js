@@ -22,7 +22,7 @@ export default function MenuBar(props) {
         if (mode === 'light') {
           setMode('dark');
         } else {
-          setMode('light')
+          setMode('light');
         }
     }
 
