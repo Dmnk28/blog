@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline />
+      <CssBaseline enableColorScheme/>
       <Head>
         <title>Code Ride Translate</title>
         <meta name="description" content="A Blog tributed to coding, cycling and languages" />
@@ -23,9 +23,9 @@ function MyApp({ Component, pageProps }) {
       </Head>
 
       <div id="container">
-        <MenuBar mode={mode} setMode={setMode} saveLocalMode={saveLocalMode} />
+        <MenuBar mode={mode} setMode={setMode} />
         <main>
-          <Box id="contentBox" display="flex" justifyContent="center">
+          <Box mb={25} display="flex" justifyContent="center">
             <Component {...pageProps} />
           </Box>
         </main>

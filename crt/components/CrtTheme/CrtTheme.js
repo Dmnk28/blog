@@ -36,12 +36,12 @@ const getLightVsDark = (mode) => (mode === 'light') ? {
         MuiCssBaseline: {
             styleOverrides: {
                 body: {
-                    background:         'url("/background_light1.svg") no-repeat fixed',
+                    background:         '#EBE9E8 url("/background_light1.svg") no-repeat fixed',
                     backgroundPosition: 'bottom left',
                     backgroundSize:     'cover',
                 },
                 '#footer': {
-                    background:         'url("/background_footer_light1.png")',
+                    background:         'url("/background_footer_light1.svg")',
                     backgroundSize:     'cover',
                     backgroundPosition: 'top left',
                     backgroundColor:    'transparent',
@@ -103,14 +103,13 @@ const getLightVsDark = (mode) => (mode === 'light') ? {
         MuiCssBaseline: {
             styleOverrides: {
                 body: {
-                    background:      'url("/background_dark1.svg") no-repeat fixed',
+                    background:      '#132336 url("/background_dark3.svg") no-repeat fixed',
                     backgroundPosition: 'bottom left',
                     backgroundSize:  'cover',
                 },
                 '#footer': {
-                    background:         'url("/background_footer_dark1.png")',
+                    background:         'url("/background_footer_dark3.svg")',
                     backgroundSize:     'cover',
-                    backgroundPosition: 'top left',
                     backgroundColor:    'transparent',
                 }
             }
