@@ -6,10 +6,9 @@ import ContentfulApi from '@utils/ContentfulApi';
 import { Box, Card, CardContent, Typography } from '@mui/material';
 import Markdown from 'markdown-to-jsx';
 
-import background_dark2 from '@components/CrtTheme/background_dark2.svg';
-
 export default function Home(props) {
-  const { posts, about } = props
+  const { posts, about } = props;
+  
   return (
     <main>
       
