@@ -9,25 +9,6 @@ import Footer from '@components/Footer';
 
 function MyApp({ Component, pageProps }) {
   const [mode, setMode]   =   useState();
-  
-  useEffect(() => {
-    getLocalMode();
-  },[]);
-
-  useEffect(() => {
-    saveLocalMode();
-  }, [mode])
-
-  const saveLocalMode = () => {
-    localStorage.setItem('mode', JSON.stringify(mode));
-  }
-
-  const getLocalMode = () => {
-    if (localStorage.getItem('mode') === String) {
-      const localMode = JSON.parse(localStorage.getItem('mode'));
-      setMode(localMode);
-    }
-  }
 
   const theme = createTheme(getLightVsDark(mode));
 
