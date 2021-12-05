@@ -8,7 +8,7 @@ import Markdown from 'markdown-to-jsx';
 
 export default function Home(props) {
   const { posts, about } = props;
-  
+
   return (
     <main>
       
@@ -29,7 +29,7 @@ export default function Home(props) {
       </section>
 
       <section>
-        <Card sx={{my: 10, mx: {sm: 10, md: 18, lg: 30, xl: 57}}} >
+        <Card sx={{mt: 15, mx: {xs: 1, sm: 10, md: 18, lg: 30, xl: 57}}} elevation={12}>
           <CardContent>
             <Typography variant="h4" component="h2">
               {about.title}

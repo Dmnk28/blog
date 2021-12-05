@@ -13,7 +13,7 @@ export default function PostOverview ({posts}) {
             <Masonry columns={{xs: 1, sm: 2,lg: 3}} spacing={2}>
             {posts.map((post) => (
                 <article key={post.sys.id}>
-                <Card elevation={7}>
+                <Card elevation={10}>
                     <NextLink href={"/" + post.slug} passHref>
                     <CardActionArea>
                         {post.titleImage ? (<CardMedia>
