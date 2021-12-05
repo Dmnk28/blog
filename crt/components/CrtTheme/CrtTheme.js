@@ -1,5 +1,3 @@
-import background_dark1 from './background_dark1.svg'
-
 const getLightVsDark = (mode) => (mode === 'light') ? {
     /* Light Side */
     palette: {
@@ -39,11 +37,11 @@ const getLightVsDark = (mode) => (mode === 'light') ? {
             styleOverrides: {
                 body: {
                     background:         'url("/background_light1.svg") no-repeat fixed',
-                    backgroundPosition:     'bottom left',
-                    backgroundSize:         'cover',
+                    backgroundPosition: 'bottom left',
+                    backgroundSize:     'cover',
                 },
                 '#footer': {
-                    background:         'url("/background_footer_light2.png")',
+                    background:         'url("/background_footer_light1.png")',
                     backgroundSize:     'cover',
                     backgroundPosition: 'top left',
                     backgroundColor:    'transparent',
@@ -105,8 +103,15 @@ const getLightVsDark = (mode) => (mode === 'light') ? {
         MuiCssBaseline: {
             styleOverrides: {
                 body: {
-                    backgroundImage:      'url("/background_dark2.svg")',
-                    backgroundSize:        'cover',
+                    background:      'url("/background_dark1.svg") no-repeat fixed',
+                    backgroundPosition: 'bottom left',
+                    backgroundSize:  'cover',
+                },
+                '#footer': {
+                    background:         'url("/background_footer_dark1.png")',
+                    backgroundSize:     'cover',
+                    backgroundPosition: 'top left',
+                    backgroundColor:    'transparent',
                 }
             }
         }
