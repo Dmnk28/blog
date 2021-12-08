@@ -2,7 +2,7 @@ const getLightVsDark = (mode) => (mode === 'light') ? {
     /* Light Side */
     palette: {
         primary: {
-            main:            '#46B8AA', //'#118F74', 
+            main:           '#46B8AA', 
         },
         divider:            '#D97904'[200],
         secondary: {
@@ -29,7 +29,7 @@ const getLightVsDark = (mode) => (mode === 'light') ? {
         MuiAppBar: {
             styleOverrides: {
                 root: {
-                    backgroundColor: '#46B8AA', //147580
+                    backgroundColor: '#46B8AA', 
                 }
             }
         },
@@ -96,7 +96,7 @@ const getLightVsDark = (mode) => (mode === 'light') ? {
         MuiAppBar: {
             styleOverrides: {
                 root: {
-                    backgroundColor: '#105961', //147580
+                    backgroundColor: '#105961', 
                 }
             }
         },
