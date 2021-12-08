@@ -4,7 +4,7 @@ import MuiNextButton from '@components/MuiNextButton';
 import PostOverview from '@components/PostOverview';
 import ContentfulApi from '@utils/ContentfulApi';
 import { Box, Card, CardContent, Typography } from '@mui/material';
-import Markdown from 'markdown-to-jsx';
+import Markdown from '@utils/MarkdownMUI';
 
 export default function Home(props) {
   const { posts, about } = props;
@@ -29,9 +29,9 @@ export default function Home(props) {
       </section>
 
       <section>
-        <Card sx={{mt: 15, mx: {xs: 1, sm: 10, md: 18, lg: 30, xl: 57}}} elevation={12}>
+        <Card sx={{mt: 15, mx: {xs: 1, sm: 10, md: 18, lg: 30, xl: 57}, p: 2}} elevation={12}>
           <CardContent>
-            <Typography variant="h4" component="h2">
+            <Typography variant="h3" component="h2" sx={{mb: 1}}>
               {about.title}
             </Typography>
             <Markdown>
