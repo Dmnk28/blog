@@ -7,12 +7,12 @@ import { faGithub, faLinkedin, faStrava } from '@fortawesome/free-brands-svg-ico
 export default function Footer () {
     return (
         <footer id="footer">
-            <Box sx={{my: 6, pt: 15,}} maxWidth="90vw">
+            <Box sx={{my: 3, pt: 15,}} maxWidth="90vw">
                 <Grid container spacing={4} sx={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                    <Grid item xs={12} lg={2}sx={{display: 'flex', alignItems: 'center', justifyContent: {xs: 'center', lg: 'flex-end'}}}>
+                    <Grid item xs={12} lg={2}sx={{display: 'flex', alignItems: 'center', justifyContent: {xs: 'center', lg: 'flex-start'}}}>
                         <Avatar alt="Dominik Oesterle" src="/avatar.png" sx={{width: '12rem', height: '12rem'}} />
                     </Grid>
-                    <Grid item xs={12} lg={6} sx={{my: 'auto', px: {xs: 5, md: 0}}}>
+                    <Grid item xs={12} lg={5} sx={{my: 'auto', px: {xs: 5, md: 0}}}>
                         <Box>
                         <Typography variant="h5" textAlign={{xs: "center", lg: "left"}} gutterBottom>
                             Über mich
@@ -32,11 +32,16 @@ export default function Footer () {
                         </Box>
                     </Grid>
                 </Grid>
-                <Box mt={25}>
-                    
+                <Box mt={25} display="flex" justifyContent="space-around">
                     <Typography variant="body2">
+                        &copy; 2021&nbsp;
                         <NextLink href="https://do-webdev.de/projects/timer" passHref>
-                            <MUILink variant="body2" color="inherit">&copy; 2021 Dominik Oesterle</MUILink>
+                            <MUILink variant="body2" color="inherit">Dominik Oesterle</MUILink>
+                        </NextLink>
+                    </Typography>
+                    <Typography variant="body2"> 
+                        <NextLink href="/" passHref>
+                            <MUILink variant="body2" color="inherit">Datenschutz</MUILink>
                         </NextLink>
                         &nbsp;|&nbsp; 
                         <NextLink href="/" passHref>

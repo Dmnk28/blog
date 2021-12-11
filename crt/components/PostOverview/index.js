@@ -10,7 +10,7 @@ export default function PostOverview ({posts}) {
     
     return (
         <Box display="flex" justifyContent="center" my={3} mx={{sm: 3, md: 4, lg: 10, xl: 30}}>
-            <Masonry columns={{xs: 1, sm: 2,lg: 3}} spacing={2}>
+            <Masonry columns={{xs: 1, sm: 2,lg: 3}} spacing={3}>
             {posts.map((post) => (
                 <article key={post.sys.id}>
                 <Card elevation={10}>
