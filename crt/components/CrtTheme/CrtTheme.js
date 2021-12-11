@@ -45,6 +45,7 @@ const getLightVsDark = (mode) => (mode === 'light') ? {
                     backgroundSize:     'cover',
                     backgroundPosition: 'top left',
                     backgroundColor:    'transparent',
+                    color:              '#F5F4F2',
                 }
             }
         }
