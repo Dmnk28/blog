@@ -103,13 +103,14 @@ const getLightVsDark = (mode) => (mode === 'light') ? {
         MuiCssBaseline: {
             styleOverrides: {
                 body: {
-                    background:      '#132336 url("/background_dark3.svg") no-repeat fixed',
+                    background:         '#132336 url("/background_dark3.svg") no-repeat fixed',
                     backgroundPosition: 'bottom left',
-                    backgroundSize:  'cover',
+                    backgroundSize:     'cover',
                 },
                 '#footer': {
                     background:         'url("/background_footer_dark3.svg")',
                     backgroundSize:     'cover',
+                    backgroundPosition: 'top left',
                     backgroundColor:    'transparent',
                 }
             }
