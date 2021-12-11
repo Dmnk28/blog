@@ -1,7 +1,6 @@
 import NextLink from 'next/link';
-import { Avatar, Grid, Button, Link as MUILink, Typography, IconButton } from '@mui/material'
+import { Avatar, Grid, Link as MUILink, Typography, IconButton } from '@mui/material'
 import { Box } from '@mui/system';
-import MuiNextButton from '@components/MuiNextButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faStrava } from '@fortawesome/free-brands-svg-icons'
 
@@ -24,14 +23,14 @@ export default function Footer () {
                             Seit 2019 fahr ich leidenschaftlich gerne Rad und habe meine Liebe zum Webdevelopement wiederentdeckt.
                         </Typography>
                         </Box>
-                        {/* <Box mt={1} sx={{display: 'flex', alignItems: 'center', justifyContent: {xs: 'center', lg: 'flex-end'}}}>
-                            <IconButton href="https://github.com/Dmnk28" target="_blank" color="inherit"><FontAwesomeIcon icon={faGithub} color="inherit"/></IconButton>
+                        <Box mt={1} sx={{display: 'flex', alignItems: 'center', justifyContent: {xs: 'center', lg: 'flex-end'}}}>
+                            <IconButton href="https://github.com/Dmnk28" target="_blank" size="large" color="inherit"><FontAwesomeIcon icon={faGithub}/></IconButton>
                             
-                            <IconButton href="https://www.strava.com/dashboard" target="_blank" color="inherit"><FontAwesomeIcon icon={faStrava} color="inherit"/></IconButton>
+                            <IconButton href="https://www.strava.com/dashboard" target="_blank"  size="large" color="inherit"><FontAwesomeIcon icon={faStrava}/></IconButton>
                             
-                            <IconButton href="https://www.linkedin.com/in/dominikoesterle/" target="_blank" color="inherit"><FontAwesomeIcon icon={faLinkedin} color="inherit"/></IconButton>
+                            <IconButton href="https://www.linkedin.com/in/dominikoesterle/" target="_blank"  size="large" color="inherit"><FontAwesomeIcon icon={faLinkedin}/></IconButton>
                         
-                        </Box> */}
+                        </Box>
                     </Grid>
                 </Grid>
                 <Box mt={25}>
