@@ -29,7 +29,6 @@ export default function Footer () {
                             <IconButton href="https://www.strava.com/dashboard" target="_blank"  size="large" color="inherit"><FontAwesomeIcon icon={faStrava}/></IconButton>
                             
                             <IconButton href="https://www.linkedin.com/in/dominikoesterle/" target="_blank"  size="large" color="inherit"><FontAwesomeIcon icon={faLinkedin}/></IconButton>
-                        
                         </Box>
                     </Grid>
                 </Grid>

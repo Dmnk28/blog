@@ -40,6 +40,12 @@ From there on it's my own design, thinking and style of implementation.
         - the Link used in the Markdown is shortened and due to it containing the Contentful-ID of the Image it is unique  
         - that Link is compared to the URLs in Array of contentImages where all the additional data (height, width, description, title...) are found and loaded from
     - this solution might be strange in comparison to simply render the markdown, but it brings the advantage that it loads all the centralized informations belonging to the image. Every time changes are made to the picture-metadata it will be rendered in the app as well. (In the other way, the markdown would have to be changed)
+- using FontAwesome can be tricky due to the different handling of CSS in NEXT. To use it import the css-styles in the _app.js-File like so:
+```
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
+```
 
 
 ### Contentful
