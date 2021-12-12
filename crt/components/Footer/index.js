@@ -20,14 +20,12 @@ export default function Footer () {
                         <Typography variant="body1" textAlign={{xs: "center", lg: "left"}}>
                             Hey, ich bin Dominik. Nach dem Studium der Arabistik und Geschichtswissenschaft habe ich zunächst 
                             an der Uni als wissenschaftlicher Mitarbeiter gearbeitet.  
-                            Seit 2019 fahr ich leidenschaftlich gerne Rad und habe meine Liebe zum Webdevelopement wiederentdeckt.
+                            Seit 2019 fahre ich leidenschaftlich gern Rad und habe meine Liebe zum Webdevelopement wiederentdeckt.
                         </Typography>
                         </Box>
                         <Box mt={1} sx={{display: 'flex', alignItems: 'center', justifyContent: {xs: 'center', lg: 'flex-end'}}}>
-                            <IconButton href="https://github.com/Dmnk28" target="_blank" size="large" color="inherit"><FontAwesomeIcon icon={faGithub}/></IconButton>
-                            
+                            <IconButton href="https://github.com/Dmnk28" target="_blank" size="large" color="inherit"><FontAwesomeIcon icon={faGithub}/></IconButton>                            
                             <IconButton href="https://www.strava.com/dashboard" target="_blank"  size="large" color="inherit"><FontAwesomeIcon icon={faStrava}/></IconButton>
-                            
                             <IconButton href="https://www.linkedin.com/in/dominikoesterle/" target="_blank"  size="large" color="inherit"><FontAwesomeIcon icon={faLinkedin}/></IconButton>
                         </Box>
                     </Grid>
