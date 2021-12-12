@@ -10,7 +10,7 @@ export default function Footer () {
             <Box sx={{my: 3, pt: 15,}} maxWidth="90vw">
                 <Grid container spacing={4} sx={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
                     <Grid item xs={12} lg={2}sx={{display: 'flex', alignItems: 'center', justifyContent: {xs: 'center', lg: 'flex-start'}}}>
-                        <Avatar alt="Dominik Oesterle" src="/avatar.png" sx={{width: '12rem', height: '12rem'}} />
+                        <Avatar alt="Dominik Oesterle" src="/avatar.webp" sx={{width: '12rem', height: '12rem'}} />
                     </Grid>
                     <Grid item xs={12} lg={5} sx={{my: 'auto', px: {xs: 5, md: 0}}}>
                         <Box>
