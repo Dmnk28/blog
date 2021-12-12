@@ -6,7 +6,7 @@ import TagChips from "@components/TagChips";
 
 export default function Post (props) {
     const { post } = props;
-    const newContent = post.content.split(/(!\[[\w*\s]*\w*\]\(\/\/images.contentful.com\/skkwqq7pcfcx\/6TsZU2BFlF3JprqvRBKDyX\/cf47c8845534e965cc5da69273998e6d\/[\w*\-]*\w*\.\w*\))/g);
+    const newContent = post.content.split(/(!\[[\w*\s]*\w*\]\(\/\/(images.contentful.com||images.ctfassets.net)\/skkwqq7pcfcx\/\w*\/\w*\/[\w*\-]*\w*\.\w*\))/g);
     const contentImages = post.contentImagesCollection.items;
     return (
         <Box mt={2} >
@@ -26,7 +26,7 @@ export default function Post (props) {
                     { newContent.map((paragraph, index) => {
                         // if (paragraph == false) return;
                         if (paragraph.match(/^!\[/) && contentImages) {
-                            const link = paragraph.replace(/^!\[[\w*\s]*\w*\]\(\/\/images.contentful.com|\)/g, '');                            
+                            const link = paragraph.replace(/^!\[[\w*\s]*\w*\]\(\/\/images.contentful.com|^!\[[\w*\s]*\w*\]\(\/\/images.ctfassets.net|\)/g, '');                            
                             let imageNumber = 0;
                             for (let i = 0; i < contentImages.length; i++) {
                                 if (contentImages[i].url.endsWith(link)) imageNumber = i;
