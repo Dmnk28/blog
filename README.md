@@ -14,6 +14,7 @@ From there on it's my own design, thinking and style of implementation.
 ## ToDos
 * Long Cards for BlogList (Horizontal Carrousel ??!)
 * Some Kind of Carrousel/Slider for featured Blogposts
+* Change all png-Images to webp-images
 * As soon as it's out of Next.js-Alpha and React v18Beta: using the SSR streaming from React 18
 * Make an Recipe App for the Food-Stuff to link to
     * Make it in Vue!
@@ -25,6 +26,7 @@ From there on it's my own design, thinking and style of implementation.
     - in react `.env-File + REACT_APP_[Your Const Name]` is a solution, but dangerous (it's a Frontend App)
     - idealy pas the API-Requests with personal Keys to a backendapp and run them on the server
 - that ServerSideRendering is a cool thing to do, especially for pushing SEO and Performance.
+- Using WebP-Images brings better quality by smaller filesizes than JPG and its is smaller but has slightly lesser quality than a PNG.
 
 ### Next.js
 - first of all: Using it
