@@ -13,8 +13,8 @@ From there on it's my own design, thinking and style of implementation.
 
 ## ToDos
 * Long Cards for BlogList (Horizontal Carrousel ??!)
-* Some Kind of Carrousel/Slider for recent Blogposts
-* Images
+* Some Kind of Carrousel/Slider for featured Blogposts
+* As soon as it's out of Next.js-Alpha and React v18Beta: using the SSR streaming from React 18
 * Make an Recipe App for the Food-Stuff to link to
     * Make it in Vue!
 
