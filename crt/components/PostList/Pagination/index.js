@@ -1,7 +1,5 @@
-import { Button, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 
-import NextLink from 'next/link'
-import { Link as MUILink } from '@mui/material';
 import MuiNextButton from "@components/MuiNextButton";
 
 export default function Pagination(props) {
