@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import NextLink from 'next/link'
-import { AppBar, Avatar, Box, Button, Divider, IconButton, Link as MUILink, List, ListItemButton, ListItemAvatar, ListItemText, Paper, Toolbar, Typography } from '@mui/material';
+import { AppBar, Avatar, Box, Button, Divider, IconButton, Link as MUILink, List, ListItemButton, ListItemAvatar, ListItemText, Paper, Tabs, Tab, Toolbar, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu'
 import Modal from '@mui/material/Modal'
 
@@ -11,9 +11,11 @@ import MuiNextButton from '@components/MuiNextButton';
 
 import { menuItemsArray } from './_menuItems';
 
+
 export default function MenuBar(props) {
     const { mode, setMode } = props;
     const [burgerOpen, setBurgerOpen] = React.useState(false);
+    // const [navValue, setNavValue]     = React.useState(0);
 
     const handleBurgerOpen = () => setBurgerOpen(true); 
     const handleBurgerClose = () => setBurgerOpen(false);
@@ -25,6 +27,11 @@ export default function MenuBar(props) {
           setMode('light');
         }
     }
+
+    // const handleNavTabs = (event, newNavValue) => {
+    //     event.preventDefault();
+    //     setNavValue(newNavValue);
+    // }
 
     return (
         <AppBar id="menubar" color="primary" position="static">
@@ -41,13 +48,60 @@ export default function MenuBar(props) {
                 </Typography>
 
                 <Box sx={{display: {xs: 'none', md: 'flex'}}}>
-                    {menuItemsArray.map((element, index) => (
+                    {   
+                        menuItemsArray.map((element, index) => (
+                            <MuiNextButton  key={element.name + index.toString()} 
+                                            href={element.href} 
+                                            color="inherit" 
+                                            btnText={element.name} 
+                                            deactivate={false}/>
+                        ))
+                        
+                    }
+                    
+                    
+                    
+                    {/* 
+                    <Tabs value={navValue} onChange={handleNavTabs} textColor="secondary" indicatorColor="secondary" aria-label="navigation tabs">
+                    
+                    </Tabs>
+                        function TabLink(props) {
+                           return (
+                                <NextLink key={props.key} href={props.href} passHref>
+                                    <Tab component="a" onClick={(event) => {
+                                        event.preventDefault();
+                                    }}
+                                {...props}
+                                    />
+                                </NextLink>
+                            );
+                        }
+                    
+                    
+                        menuItemsArray.map((element, index) => {
+                            console.log(element.href);
+                            return (
+                                <NextLink key={element.name} href={element.href} passHref>
+                                    <Tab component="a" label={element.name} value={index}/>
+                                </NextLink>    
+                        )})
+                        
+                        
+                        menuItemsArray.map((element, index) => {
+                            console.log(element.href);
+                            return (
+                                
+                                    <Tab key={element.name} component="NextLink" to={element.href} label={element.name}/>
+                                
+                        )})
+
+                        {menuItemsArray.map((element, index) => (
                         <MuiNextButton  key={element.name + index.toString()} 
                                         href={element.href} 
                                         color="inherit" 
                                         btnText={element.name} 
                                         deactivate={false}/>
-                    ))}
+                    ))} */}
                     <Button onClick={handleModeBtn} color="inherit">
                         {mode === 'light' ? <Brightness2 /> : <Brightness7 />}
                     </Button>
