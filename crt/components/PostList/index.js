@@ -5,7 +5,7 @@ import NextLink from 'next/link'
 import {    formatPublishedDateForDateTime,
             formatPublishedDateForDisplay, } from '@utils/Date';
 
-import { Card, Chip, CardActionArea, CardContent, Typography, Divider, CardMedia } from "@mui/material";
+import { Card, CardActionArea, CardContent, Typography, Divider, CardMedia } from "@mui/material";
 import { Box } from '@mui/system';
 
 import { ArrowForwardIos } from '@mui/icons-material';
