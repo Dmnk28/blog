@@ -1,10 +1,16 @@
 import React from 'react';
+import dynamic from 'next/dynamic';
 // import Image from 'next/image';
 import MuiNextButton from '@components/MuiNextButton';
 import PostOverview from '@components/PostOverview';
 import ContentfulApi from '@utils/ContentfulApi';
-import { Box, Card, CardContent, Typography } from '@mui/material';
-import Markdown from '@utils/MarkdownMUI';
+import { Box, Typography } from '@mui/material';
+
+/* Loading modules needed further below the page dynamically for better initial page load*/
+const Markdown  = dynamic(() => import('@utils/MarkdownMUI'));
+const Card      = dynamic(() => import('@mui/material/Card'))
+const CardContent      = dynamic(() => import('@mui/material/CardContent'))
+
 
 export default function Home(props) {
   const { posts, about } = props;

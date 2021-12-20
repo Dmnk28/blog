@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import dynamic from 'next/dynamic';
 import getLightVsDark from '@components/CrtTheme/CrtTheme';
 import { Box, ThemeProvider, createTheme, CssBaseline } from '@mui/material';
 
@@ -10,7 +11,10 @@ config.autoAddCss = false
 import Head from 'next/head';
 import MenuBar from '@components/MenuBar';
 import '@styles/main.css';
-import Footer from '@components/Footer';
+
+/* Loading modules needed further below the page dynamically for better initial page load*/
+const Footer  = dynamic(() => import('@components/Footer'));
+
 
 function MyApp({ Component, pageProps }) {
   const [mode, setMode]   =   useState();
