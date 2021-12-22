@@ -16,15 +16,15 @@ export default function PostOverview ({posts}) {
                 <Card elevation={10}>
                     <NextLink href={"/" + post.slug} passHref>
                     <CardActionArea>
-                        {post.titleImage ? (<CardMedia>
-                            <Image  src={post.titleImage.url}
-                                    height={post.titleImage.height}
-                                    width={post.titleImage.width}
+                        {post.thumbnail && (<CardMedia>
+                            <Image  src={post.thumbnail.url}
+                                    height={post.thumbnail.height}
+                                    width={post.thumbnail.width}
                                     layout="responsive"
                                     sizes="100vw"
-                                    alt={post.titleImage.description}
+                                    alt={post.thumbnail.description}
                             />
-                        </CardMedia>) : ''}
+                        </CardMedia>)}
                         <CardContent>
                             <Typography color="secondary" variant="h4" component="div">
                                 {post.title}

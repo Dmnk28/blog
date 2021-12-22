@@ -25,10 +25,10 @@ export default function PostList(props) {
           <Card sx={{my: {xs: 2, sm: 4}}} elevation={12}>
             <NextLink href={"/" + post.slug} passHref>
             <CardActionArea >
-              {post.titleImage && (<CardMedia component="img"
+              {post.thumbnail && (<CardMedia component="img"
                           height="300 "
-                          image={post.titleImage.url}
-                          alt={post.titleImage.title}/>
+                          image={post.thumbnail.url}
+                          alt={post.thumbnail.title}/>
               )}<CardContent px={4} pb={3}>
                 
                 <Typography variant="overline">
