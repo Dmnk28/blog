@@ -126,7 +126,7 @@ export default class ContentfulApi {
           excerpt
           tags
           publicationDate
-          titleImage {
+          thumbnail {
             title
             description
             contentType
