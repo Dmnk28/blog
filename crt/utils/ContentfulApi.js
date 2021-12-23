@@ -203,6 +203,7 @@ export default class ContentfulApi {
               height
             }
           }
+          mapUrl
           sources
           downloadablePdf {
             title

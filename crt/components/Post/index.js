@@ -22,6 +22,14 @@ export default function Post (props) {
                     
                     <TagChips tags={post.tags}/>
                     
+                    {post.mapUrl && (<iframe 
+                                        src={post.mapUrl} 
+                                        width="100%" 
+                                        height="680" 
+                                        frameborder="0" 
+                                        scrolling="no">
+                                    </iframe>)}
+
                     <Divider sx={{my: 3}} />
                     { newContent.map((paragraph, index) => {
                         // if (paragraph == false) return;
