@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
-
 import getLightVsDark from '@components/CrtTheme/CrtTheme';
 import { Box, ThemeProvider, createTheme, CssBaseline } from '@mui/material';
 
