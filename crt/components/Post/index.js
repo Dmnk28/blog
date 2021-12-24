@@ -1,8 +1,11 @@
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { Box, Divider, Paper, Typography } from "@mui/material";
 import Markdown from "@utils/MarkdownMUI";
 import TagChips from "@components/TagChips";
 
+const Card      = dynamic(() => import('@mui/material/Card'));
+const CardMedia = dynamic(() => import('@mui/material/CardMedia'));
 
 export default function Post (props) {
     const { post } = props;
@@ -21,14 +24,6 @@ export default function Post (props) {
                     </Typography>
                     
                     <TagChips tags={post.tags}/>
-                    
-                    {post.mapUrl && (<iframe 
-                                        src={post.mapUrl} 
-                                        width="100%" 
-                                        height="680" 
-                                        frameborder="0" 
-                                        scrolling="no">
-                                    </iframe>)}
 
                     <Divider sx={{my: 3}} />
                     { newContent.map((paragraph, index) => {
@@ -56,7 +51,21 @@ export default function Post (props) {
                         } 
                         return (<Markdown key={'p' + index.toString()}>{paragraph}</Markdown>)
                     })}
-                    {/* <Markdown>{post.content}</Markdown> */}
+
+                    {post.mapUrl && (
+                        <Box mt={4}>
+                            <Typography variant="h4" component="h2">Komoot-Route</Typography>
+                            <Card>
+                                <CardMedia 
+                                component="iframe"
+                                src={post.mapUrl} 
+                                width="100%" 
+                                height="680" 
+                                frameBorder="0" 
+                                scrolling="no"></CardMedia>
+                            </Card>
+                        </Box>
+                    )}
                 </Box>
             </Paper>
         </Box>
