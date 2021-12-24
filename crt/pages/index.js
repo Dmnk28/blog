@@ -7,9 +7,9 @@ import ContentfulApi from '@utils/ContentfulApi';
 import { Box, Typography } from '@mui/material';
 
 /* Loading modules needed further below the page dynamically for better initial page load*/
-const Markdown  = dynamic(() => import('@utils/MarkdownMUI'));
-const Card      = dynamic(() => import('@mui/material/Card'))
-const CardContent      = dynamic(() => import('@mui/material/CardContent'))
+const Markdown    = dynamic(() => import('@utils/MarkdownMUI'));
+const Card        = dynamic(() => import('@mui/material/Card'));
+const CardContent = dynamic(() => import('@mui/material/CardContent'));
 
 
 export default function Home(props) {
