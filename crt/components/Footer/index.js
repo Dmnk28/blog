@@ -1,8 +1,8 @@
 import NextLink from 'next/link';
-import { Avatar, Grid, Link as MUILink, Typography, IconButton } from '@mui/material'
+import { Avatar, Grid, Link as MUILink, Typography, IconButton } from '@mui/material';
 import { Box } from '@mui/system';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin, faStrava } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faLinkedin, faStrava } from '@fortawesome/free-brands-svg-icons';
 
 export default function Footer () {
     return (
@@ -15,11 +15,13 @@ export default function Footer () {
                     <Grid item xs={12} lg={5} sx={{my: 'auto', px: {xs: 5, md: 0}}}>
                         <Box>
                         <Typography variant="h5" textAlign={{xs: "center", lg: "left"}} gutterBottom>
-                            Über mich
+                            Hey, ich bin Dominik.
+                        </Typography>
+                        <Typography variant="body1" textAlign={{xs: "center", lg: "left"}} gutterBottom>
+                            Nach dem Studium der Arabistik und Geschichtswissenschaft habe ich zunächst 
+                            als wissenschaftlicher Mitarbeiter an der Uni Jena gearbeitet.  
                         </Typography>
                         <Typography variant="body1" textAlign={{xs: "center", lg: "left"}}>
-                            Hey, ich bin Dominik. Nach dem Studium der Arabistik und Geschichtswissenschaft habe ich zunächst 
-                            an der Uni als wissenschaftlicher Mitarbeiter gearbeitet.  
                             Seit 2019 fahre ich leidenschaftlich gern Rad und habe meine Liebe zum Webdevelopement wiederentdeckt.
                         </Typography>
                         </Box>
