@@ -9,8 +9,11 @@ const CardMedia = dynamic(() => import('@mui/material/CardMedia'));
 
 export default function Post (props) {
     const { post } = props;
-    const newContent = post.content.split(/(!\[[\w*\s]*\w*\]\(\/\/(images.contentful.com||images.ctfassets.net)\/skkwqq7pcfcx\/\w*\/\w*\/[\w*\-]*\w*\.\w*\))/g);
-    const contentImages = post.contentImagesCollection.items;
+    
+    const splitContentByImagesRegex = /(!\[[\w*\s]*\w*\]\(\/\/images.ctfassets.net\/skkwqq7pcfcx\/\w*\/\w*\/[\w*\-]*\w*\.\w*\)|!\[[\w*\s]*\w*\]\(\/\/images.contentful.com\/skkwqq7pcfcx\/\w*\/\w*\/[\w*\-]*\w*\.\w*\))/g;
+    const newContent                = post.content.split(splitContentByImagesRegex);
+    const contentImages             = post.contentImagesCollection.items;
+    
     return (
         <Box mt={2} >
             <Paper sx={{mx: {xs: 1, sm: 8, md: 14, lg: 30, xl: 57}}} elevation={15}>
