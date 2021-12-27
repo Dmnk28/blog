@@ -43,7 +43,6 @@ export default function Post (props) {
                                             <Image
                                                 src={contentImages[imageNumber].url}
                                                 alt={contentImages[imageNumber].url} 
-                                                layout="intrinsic"
                                                 width={contentImages[imageNumber].width}
                                                 height={contentImages[imageNumber].height}    
                                             />
