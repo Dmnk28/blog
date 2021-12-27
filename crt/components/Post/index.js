@@ -43,8 +43,9 @@ export default function Post (props) {
                                             <Image
                                                 src={contentImages[imageNumber].url}
                                                 alt={contentImages[imageNumber].url} 
-                                                height={contentImages[imageNumber].height}    
+                                                layout="intrinsic"
                                                 width={contentImages[imageNumber].width}
+                                                height={contentImages[imageNumber].height}    
                                             />
                                             <Typography variant="body2" align="center">{contentImages[imageNumber].title}: {contentImages[imageNumber].description}</Typography>
                                         </Box>
