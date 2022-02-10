@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 import getLightVsDark from '@components/CrtTheme/CrtTheme';
 import { Box, ThemeProvider, createTheme, CssBaseline } from '@mui/material';
 
-/* Setting up FontAwesome-CSS so the Icons won't become huge */
+/* Setting up FontAwesome-CSS so the Icons won't become huge in Next.js */
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false
