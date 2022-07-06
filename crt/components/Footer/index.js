@@ -8,8 +8,8 @@ export default function Footer () {
     return (
         <footer id="footer">
             <Box sx={{my: 3, pt: 15,}} maxWidth="90vw">
-                <Grid container spacing={4} sx={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                    <Grid item xs={12} lg={2}sx={{display: 'flex', alignItems: 'center', justifyContent: {xs: 'center', lg: 'flex-start'}}}>
+                <Grid container /* spacing={4} */ sx={{m: 'auto',display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                    <Grid item xs={12} lg={2}sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', mb: {xs: '3rem', lg: 'none'}, mr: {xs: 'none', lg: '3rem'} }}>
                         <Avatar alt="Dominik Oesterle" src="/avatar.webp" sx={{width: '12rem', height: '12rem'}} />
                     </Grid>
                     <Grid item xs={12} lg={5} sx={{my: 'auto', px: {xs: 5, md: 0}}}>
