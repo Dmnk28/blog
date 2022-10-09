@@ -24,7 +24,7 @@ export default function Home(props) {
             Willkommen zu Code Ride Translate
           </Typography>
           <Typography variant="h6" align="center" component="p" sx={{mt:1, mb:4}}>
-            einem Blog rund um Fullstack Development, Rennräder und Sprachen
+            einem Blog rund um Fullstack Development, Rennräder und semitische Sprachen
           </Typography>
           <MuiNextButton href="/blog" variant="contained" size="large" color="tertiary" btnText="View all Posts" /> 
         </Box>
