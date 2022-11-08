@@ -24,7 +24,7 @@ const options = {
       props: { 
         gutterBottom: true, 
         variant: 'h6', 
-        component: 'h3' 
+        component: 'h3',
       },
     },
     h3: {
@@ -47,7 +47,13 @@ const options = {
         paragraph: true 
       },
     },
-    a: { component: Link },
+    a: { 
+      component: Link,
+      props: {
+        color: '#F2527D',
+        sx: { fontWeight: "bold"},
+      }
+    },
     li: {
       component: MarkdownListItem,
     },

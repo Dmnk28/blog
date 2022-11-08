@@ -35,16 +35,16 @@ export default function Footer () {
                 <Box mt={25} display="flex" justifyContent="space-around">
                     <Typography variant="body2">
                         &copy; 2021&nbsp;
-                        <NextLink href="https://do-webdev.de/projects/timer" passHref>
+                        <NextLink href="https://do-webdev.de/" passHref>
                             <MUILink variant="body2" color="inherit">Dominik Oesterle</MUILink>
                         </NextLink>
                     </Typography>
                     <Typography variant="body2"> 
-                        <NextLink href="/" passHref>
+                        {/* <NextLink href="/" passHref>
                             <MUILink variant="body2" color="inherit">Datenschutz</MUILink>
                         </NextLink>
-                        &nbsp;|&nbsp; 
-                        <NextLink href="/" passHref>
+                        &nbsp;|&nbsp;  */}
+                        <NextLink href="https://do-webdev.de/impressum.html" passHref>
                             <MUILink variant="body2" color="inherit">Impressum</MUILink>
                         </NextLink>
                     </Typography>
